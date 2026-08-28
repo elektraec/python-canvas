@@ -21,8 +21,11 @@ async function runPython(ed,out,btn){let o=document.getElementById(out),b=docume
 function resetEditor(id,txt){document.getElementById(id).value=txt}window.resetEditor=resetEditor;
 
 function githubInfo(){let host=location.hostname.split(".")[0], parts=location.pathname.split("/").filter(Boolean), repo=parts[0];if(location.hostname.endsWith("github.io")&&host&&repo)return {owner:host,repo};return null;}
-function colabUrl(w){let g=githubInfo();if(!g)return null;return `https://colab.research.google.com/github/${g.owner}/${g.repo}/blob/main/notebooks/semana${String(w.week).padStart(2,"0")}.ipynb`;}
-
+function colabUrl(w){
+  let g=githubInfo();
+  if(!g)return null;
+  return `https://colab.research.google.com/github/${g.owner}/${g.repo}/blob/main/laboratorio/notebooks/semana${String(w.week).padStart(2,"0")}.ipynb`;
+}
 function exerciseHTML(wi,ei){let w=W[wi],e=w.exercises[ei],inp=`a${wi}-${ei}`,fb=`f${wi}-${ei}`,sid=`s${wi}-${ei}`,ed=`ed${wi}-${ei}`,out=`o${wi}-${ei}`,run=`r${wi}-${ei}`,starter=e.starter||e.solution;
  let lab=w.language==="Python"?`<h4>Laboratorio Python</h4><textarea id="${ed}" class="editor" spellcheck="false">${esc(starter)}</textarea><div class="toolbar"><button id="${run}" class="btn secondary" onclick="runPython('${ed}','${out}','${run}')">▶ Ejecutar Python</button><button class="btn" onclick='resetEditor("${ed}",${JSON.stringify(starter)})'>Restaurar</button></div><div id="${out}" class="output">La salida aparecerá aquí.</div>`:"<h4>Práctica en PSeInt</h4><p class='muted'>Analiza la secuencia y contrástala con la solución docente.</p>";
  return `<article class="card"><span class="pill">Ejercicio ${ei+1}</span><span class="pill">${esc(w.language)}</span><h3>${esc(e.title)}</h3><p>${esc(e.statement)}</p><h4>Solución razonada</h4><ol>${e.reasoning.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
