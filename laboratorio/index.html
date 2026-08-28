@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Laboratorio Interactivo B26</title>
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=3">
 </head>
 <body>
 <header class="topbar">
@@ -17,6 +17,10 @@
 <div class="side-title">Navegación</div>
 <button id="examBtn" class="navbtn">📝 Modo examen</button>
 <button id="exportBtn" class="navbtn">⬇️ Exportar progreso</button>
+<button id="importBtn" class="navbtn">⬆️ Importar progreso</button>
+<input id="importFile" class="file-input" type="file" accept=".json,application/json">
+<button id="resetBtn" class="navbtn" style="color:#b42318">↺ Restablecer puntaje</button>
+<div id="progressStatus" class="statusmsg"></div>
 <div class="side-title">Progreso</div>
 <div class="progress"><span id="progressBar"></span></div>
 <p class="muted" style="font-size:12px">Mejor examen: <b id="bestExam">0%</b></p>
@@ -25,5 +29,5 @@
 </aside>
 <main class="main"><div id="content"></div><div class="footer">B26 · GitHub Pages + Canvas LMS · Pyodide + Colab + actividades interactivas.</div></main>
 </div>
-<script src="assets/data.js"></script><script src="assets/app.js"></script>
+<script src="assets/data.js?v=3"></script><script src="assets/app.js?v=3"></script>
 </body></html>
