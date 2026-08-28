@@ -59,6 +59,7 @@ window.renderWeek=renderWeek;
 
 
 function examStart(){
+  sessionStorage.removeItem("b26exam");
   const options=W.map(w=>`<option value="${w.week}">Semana ${w.week} — ${esc(w.title)}</option>`).join("");
   $("#content").innerHTML=`
     <section class="hero"><h2>📝 Modo examen</h2>
@@ -79,8 +80,13 @@ function examGenerate(){
   const weekNum=Number(document.getElementById("examWeek").value);
   const requested=Math.max(5,Number(document.getElementById("examCount").value)||5);
   const w=W.find(x=>x.week===weekNum);
-  let pool=shuffled(w.exam_bank||[]).slice(0,Math.min(requested,(w.exam_bank||[]).length));
-  // Shuffle choices independently on every attempt so the correct letter is not predictable.
+  const validBank=(w.exam_bank||[]).filter(q=>Array.isArray(q.options) && q.options.length===4 && Number.isInteger(q.correct) && q.correct>=0 && q.correct<4);
+  if(validBank.length<5){
+    $("#content").innerHTML=`<div class="card"><h3>No se pudo generar el examen</h3><p>Esta semana no tiene suficientes preguntas de selección múltiple válidas.</p><button class="btn" onclick="examStart()">Volver</button></div>`;
+    return;
+  }
+  let pool=shuffled(validBank).slice(0,Math.min(requested,validBank.length));
+  // Shuffle choices independently on every attempt so la letra correcta no sea predecible.
   pool=pool.map(q=>{
     let tagged=q.options.map((text,i)=>({text,ok:i===q.correct}));
     tagged=shuffled(tagged);
@@ -109,8 +115,9 @@ function examSubmit(){
     details.push(`<li>${ok?"✓":"✗"} ${esc(q.question)}<br><b>Respuesta correcta:</b> <code>${esc(q.options[q.correct])}</code></li>`);
   });
   const pct=items.length?Math.round(score/items.length*100):0;
+  const answered=items.filter((q,i)=>document.querySelector(`input[name="exam${i}"]:checked`)).length;
   let s=store();if(pct>s.examBest)s.examBest=pct;write(s);updateStats();
-  $("#examResult").innerHTML=`<h3>Resultado: ${score}/${items.length} (${pct}%)</h3><ol>${details.join("")}</ol>
+  $("#examResult").innerHTML=`<h3>Resultado: ${score}/${items.length} (${pct}%)</h3><p class="muted">Respondidas: ${answered}/${items.length}</p><ol>${details.join("")}</ol>
     <div class="toolbar"><button class="btn primary" onclick="examGenerate()">Nuevo examen de esta semana</button><button class="btn" onclick="examStart()">Elegir otra semana</button></div>`;
 }
 window.examSubmit=examSubmit;
