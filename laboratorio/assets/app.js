@@ -17,6 +17,21 @@ function checkAnswer(wi,ei,input,fb){let ex=W[wi].exercises[ei],c=ex.check,v=doc
 window.checkAnswer=checkAnswer;
 function toggle(id){document.getElementById(id).classList.toggle("hidden")} window.toggle=toggle;
 async function ensurePy(){if(pyodide)return pyodide;if(pyLoad)return pyLoad;pyLoad=(async()=>{if(typeof loadPyodide==="undefined"){await new Promise((res,rej)=>{let s=document.createElement("script");s.src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js";s.onload=res;s.onerror=rej;document.head.appendChild(s)})} pyodide=await loadPyodide({indexURL:"https://cdn.jsdelivr.net/pyodide/v0.27.7/full/"});return pyodide})();return pyLoad;}
+function pythonTutorUrl(code,embed=true){
+ const base=embed?"https://pythontutor.com/iframe-embed.html":"https://pythontutor.com/render.html";
+ return base+"#code="+encodeURIComponent(code)+"&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false";
+}
+function togglePythonTutor(ed,panelId,frameId,linkId,btnId){
+ const panel=document.getElementById(panelId), frame=document.getElementById(frameId), link=document.getElementById(linkId), btn=document.getElementById(btnId);
+ if(!panel||!frame||!link)return;
+ if(!panel.classList.contains("hidden")){panel.classList.add("hidden"); if(btn)btn.textContent="▶ Python Tutor"; return;}
+ const code=document.getElementById(ed)?.value||"";
+ frame.src=pythonTutorUrl(code,true);
+ link.href=pythonTutorUrl(code,false);
+ panel.classList.remove("hidden");
+ if(btn)btn.textContent="▲ Ocultar Python Tutor";
+}
+window.togglePythonTutor=togglePythonTutor;
 async function runPython(ed,out,btn){let o=document.getElementById(out),b=document.getElementById(btn);b.disabled=true;b.textContent="Cargando…";o.textContent="Preparando Python…";try{let py=await ensurePy();await py.runPythonAsync("import sys,io\n_stdout=io.StringIO()\nsys.stdout=_stdout");try{await py.runPythonAsync(document.getElementById(ed).value);o.textContent=py.runPython("_stdout.getvalue()")||"(Ejecutado sin salida)"}catch(e){o.textContent=String(e)}}catch(e){o.textContent="No se pudo cargar Pyodide.\n"+e}finally{b.disabled=false;b.textContent="▶ Ejecutar Python"}} window.runPython=runPython;
 function resetEditor(id,txt){document.getElementById(id).value=txt}window.resetEditor=resetEditor;
 
@@ -24,7 +39,8 @@ function githubInfo(){let host=location.hostname.split(".")[0], parts=location.p
 function colabUrl(w){let g=githubInfo();if(!g)return null;return `https://colab.research.google.com/github/${g.owner}/${g.repo}/blob/main/laboratorio/notebooks/semana${String(w.week).padStart(2,"0")}.ipynb`;}
 
 function exerciseHTML(wi,ei){let w=W[wi],e=w.exercises[ei],inp=`a${wi}-${ei}`,fb=`f${wi}-${ei}`,sid=`s${wi}-${ei}`,ed=`ed${wi}-${ei}`,out=`o${wi}-${ei}`,run=`r${wi}-${ei}`,starter=e.starter||e.solution;
- let lab=w.language==="Python"?`<h4>Laboratorio Python</h4><textarea id="${ed}" class="editor" spellcheck="false">${esc(starter)}</textarea><div class="toolbar"><button id="${run}" class="btn secondary" onclick="runPython('${ed}','${out}','${run}')">▶ Ejecutar Python</button><button class="btn" onclick='resetEditor("${ed}",${JSON.stringify(starter)})'>Restaurar</button></div><div id="${out}" class="output">La salida aparecerá aquí.</div>`:"<h4>Práctica en PSeInt</h4><p class='muted'>Analiza la secuencia y contrástala con la solución docente.</p>";
+ let tutorPanel=`tp${wi}-${ei}`,tutorFrame=`tf${wi}-${ei}`,tutorLink=`tl${wi}-${ei}`,tutorBtn=`tb${wi}-${ei}`;
+ let lab=w.language==="Python"?`<h4>Laboratorio Python</h4><textarea id="${ed}" class="editor" spellcheck="false">${esc(starter)}</textarea><div class="toolbar"><button id="${run}" class="btn secondary" onclick="runPython('${ed}','${out}','${run}')">▶ Ejecutar Python</button><button id="${tutorBtn}" class="btn tutor" onclick="togglePythonTutor('${ed}','${tutorPanel}','${tutorFrame}','${tutorLink}','${tutorBtn}')">▶ Python Tutor</button><button class="btn" onclick='resetEditor("${ed}",${JSON.stringify(starter)})'>Restaurar</button></div><div id="${out}" class="output">La salida aparecerá aquí.</div><div id="${tutorPanel}" class="tutor-panel hidden"><div class="tutor-head"><strong>Visualización paso a paso · Python Tutor</strong><a id="${tutorLink}" class="btn" target="_blank" rel="noopener">↗ Abrir en pestaña nueva</a></div><p class="muted">Se visualiza el código que está actualmente en el editor. Si lo modificas, oculta y vuelve a abrir Python Tutor para actualizarlo.</p><iframe id="${tutorFrame}" class="tutor-frame" title="Python Tutor: ejecución paso a paso" loading="lazy"></iframe></div>`:"<h4>Práctica en PSeInt</h4><p class='muted'>Analiza la secuencia y contrástala con la solución docente.</p>";
  return `<article class="card"><span class="pill">Ejercicio ${ei+1}</span><span class="pill">${esc(w.language)}</span><h3>${esc(e.title)}</h3><p>${esc(e.statement)}</p><h4>Solución razonada</h4><ol>${e.reasoning.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
  <div class="check"><strong>Comprueba tu comprensión</strong><p>${esc(e.check.question)}</p><div class="checkrow"><input id="${inp}" placeholder="Tu respuesta"><button class="btn primary" onclick="checkAnswer(${wi},${ei},'${inp}','${fb}')">Comprobar</button></div><div id="${fb}" class="feedback"></div></div>${lab}
  <div class="toolbar"><button class="btn" onclick="toggle('${sid}')">👁 Mostrar / ocultar solución</button></div><div id="${sid}" class="hidden"><div class="codebox">${esc(e.solution)}</div><p><b>Resultado esperado:</b> ${esc(e.expected)}</p></div></article>`;}
