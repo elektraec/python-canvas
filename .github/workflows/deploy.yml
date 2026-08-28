@@ -32,6 +32,10 @@ jobs:
       - name: Copy laboratorio to dist
         run: |
           cp -r laboratorio dist/laboratorio
+      
+      - name: Copy prueba-papel to dist
+        run: |
+          cp -r prueba-papel dist/prueba-papel
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
