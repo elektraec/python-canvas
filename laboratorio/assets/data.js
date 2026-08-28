@@ -58,7 +58,6 @@ window.B26_WEEKS = [
         "336 unidades."
       ]
     ],
-    "teacher": "En esta semana el énfasis está en el razonamiento. No es necesario explicar aún tipos de datos ni sintaxis formal.",
     "flow_steps": [
       "Entradas: número de usuarios = 18; consumo promedio = 35 L/día.",
       "Proceso: multiplicar usuarios × consumo promedio.",
@@ -76,7 +75,38 @@ window.B26_WEEKS = [
         "  Escribir \"Consumo total diario: \", total, \" litros\"",
         "FinAlgoritmo"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Pensamiento computacional",
+        "definition": "Forma de abordar problemas mediante descomposición, reconocimiento de patrones, abstracción y diseño de pasos que puedan ejecutarse o automatizarse."
+      },
+      {
+        "term": "Descomposición",
+        "definition": "Dividir un problema grande en partes más pequeñas y manejables."
+      },
+      {
+        "term": "Entrada–proceso–salida",
+        "definition": "Modelo para identificar qué datos recibe una solución, qué operaciones realiza y qué resultados produce."
+      },
+      {
+        "term": "Algoritmo",
+        "definition": "Secuencia finita y ordenada de pasos para resolver un problema."
+      }
+    ],
+    "study_tip": "Antes de escribir pseudocódigo, identifica siempre entradas, proceso y salida.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      }
+    ]
   },
   {
     "week": 2,
@@ -135,7 +165,6 @@ window.B26_WEEKS = [
         "20 unid/h-h."
       ]
     ],
-    "teacher": "Aprovechar para mostrar por qué (a+b+c)/3 requiere paréntesis.",
     "flow_steps": [
       "Definir tres variables de entrada y una variable para el promedio.",
       "Leer las tres mediciones.",
@@ -156,7 +185,38 @@ window.B26_WEEKS = [
         "  promedio <- (m1 + m2 + m3) / 3",
         "  Escribir \"Promedio = \", promedio"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Variable",
+        "definition": "Nombre que referencia un valor que puede utilizarse y cambiar durante la ejecución."
+      },
+      {
+        "term": "Asignación",
+        "definition": "Operación que guarda o actualiza un valor en una variable."
+      },
+      {
+        "term": "Operador aritmético",
+        "definition": "Símbolo que realiza operaciones como suma, resta, multiplicación o división."
+      },
+      {
+        "term": "Expresión",
+        "definition": "Combinación de valores, variables y operadores que produce un resultado."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      }
+    ]
   },
   {
     "week": 3,
@@ -233,7 +293,38 @@ window.B26_WEEKS = [
         "  FinSi",
         "FinAlgoritmo"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Condición",
+        "definition": "Expresión que se evalúa como verdadera o falsa y permite tomar decisiones."
+      },
+      {
+        "term": "Operador relacional",
+        "definition": "Compara valores, por ejemplo mayor que, menor que o igual."
+      },
+      {
+        "term": "Operador lógico",
+        "definition": "Combina o modifica condiciones, por ejemplo AND/Y, OR/O y NOT/NO."
+      },
+      {
+        "term": "Condicional",
+        "definition": "Estructura que ejecuta diferentes instrucciones según una condición."
+      }
+    ],
+    "study_tip": "Prueba cada condición con un valor que la cumpla y otro que no.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      }
+    ]
   },
   {
     "week": 4,
@@ -309,7 +400,48 @@ window.B26_WEEKS = [
         "else:",
         "    print(\"NORMAL\")"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Python",
+        "definition": "Lenguaje de programación de propósito general con sintaxis legible y amplia biblioteca estándar."
+      },
+      {
+        "term": "input()",
+        "definition": "Función que recibe texto introducido por el usuario."
+      },
+      {
+        "term": "Conversión de tipo",
+        "definition": "Transformación explícita de un dato, por ejemplo de texto a int o float."
+      },
+      {
+        "term": "Indentación",
+        "definition": "Espacios al inicio de una línea que en Python delimitan bloques de código."
+      }
+    ],
+    "study_tip": "Compara una solución en PSeInt con su versión en Python y observa qué cambia y qué permanece.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 5,
@@ -384,7 +516,48 @@ window.B26_WEEKS = [
         "    nota = float(input(\"Ingrese nuevamente: \"))",
         "print(\"Nota valida:\", nota)"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "while",
+        "definition": "Ciclo que repite un bloque mientras una condición sea verdadera."
+      },
+      {
+        "term": "Contador",
+        "definition": "Variable que registra cuántas veces ocurre un evento."
+      },
+      {
+        "term": "Acumulador",
+        "definition": "Variable que combina progresivamente valores, normalmente mediante una suma."
+      },
+      {
+        "term": "Ciclo infinito",
+        "definition": "Repetición que no termina porque la condición de salida nunca se cumple."
+      }
+    ],
+    "study_tip": "En cada while identifica: estado inicial, condición y actualización.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 6,
@@ -461,7 +634,48 @@ window.B26_WEEKS = [
         "promedio = suma / 5",
         "print(\"Promedio:\", promedio)"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "for",
+        "definition": "Ciclo utilizado para recorrer una secuencia o repetir un conjunto conocido de iteraciones."
+      },
+      {
+        "term": "range()",
+        "definition": "Función que genera una secuencia de enteros útil en ciclos for."
+      },
+      {
+        "term": "Iteración",
+        "definition": "Una ejecución individual del cuerpo de un ciclo."
+      },
+      {
+        "term": "Máximo y mínimo",
+        "definition": "Valores extremos de un conjunto de datos."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 7,
@@ -539,7 +753,48 @@ window.B26_WEEKS = [
         "resultado = promedio(x, y, z)",
         "print(\"Promedio:\", resultado)"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Función",
+        "definition": "Bloque reutilizable de código que realiza una tarea específica."
+      },
+      {
+        "term": "Parámetro",
+        "definition": "Nombre definido en una función para recibir un dato."
+      },
+      {
+        "term": "Argumento",
+        "definition": "Valor concreto enviado a una función al invocarla."
+      },
+      {
+        "term": "return",
+        "definition": "Instrucción que finaliza una función y devuelve un valor."
+      }
+    ],
+    "study_tip": "Una buena función realiza una tarea clara y puede probarse de manera independiente.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 8,
@@ -602,7 +857,6 @@ window.B26_WEEKS = [
         "Cambiar la condición a valor < meta."
       ]
     ],
-    "teacher": "Útil como cierre antes del PAE 1 y como preparación para la evaluación de RA.",
     "flow_steps": [
       "Crear una función para decidir si una medición supera el límite.",
       "Inicializar suma, contador_alertas y máximo.",
@@ -624,7 +878,48 @@ window.B26_WEEKS = [
         "    suma += valor",
         "    if maximo is None or valor > maximo:"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Programación estructurada",
+        "definition": "Organización de programas mediante secuencias, decisiones, ciclos y funciones."
+      },
+      {
+        "term": "Trazado",
+        "definition": "Seguimiento paso a paso de variables e instrucciones para comprender la ejecución."
+      },
+      {
+        "term": "Caso de prueba",
+        "definition": "Conjunto de entradas y resultado esperado usado para comprobar un programa."
+      },
+      {
+        "term": "Depuración",
+        "definition": "Proceso sistemático de localizar, comprender y corregir errores."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 10,
@@ -698,7 +993,48 @@ window.B26_WEEKS = [
         "print(\"Maximo:\", max(mediciones))",
         "print(\"Minimo:\", min(mediciones))"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Lista",
+        "definition": "Colección ordenada y mutable de elementos en Python."
+      },
+      {
+        "term": "Índice",
+        "definition": "Posición de un elemento dentro de una secuencia; en Python suele comenzar en 0."
+      },
+      {
+        "term": "append()",
+        "definition": "Método que agrega un elemento al final de una lista."
+      },
+      {
+        "term": "Recorrido",
+        "definition": "Proceso de visitar los elementos de una colección uno por uno."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 11,
@@ -775,7 +1111,48 @@ window.B26_WEEKS = [
         "    promedio = sum(fila) / len(fila)",
         "    print(f\"Equipo {i + 1}: promedio = {promedio}\")"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Lista anidada",
+        "definition": "Lista cuyos elementos pueden ser otras listas; puede representar tablas o matrices sencillas."
+      },
+      {
+        "term": "Tupla",
+        "definition": "Secuencia ordenada e inmutable."
+      },
+      {
+        "term": "Diccionario",
+        "definition": "Colección de pares clave–valor."
+      },
+      {
+        "term": "Estructura de datos",
+        "definition": "Forma de organizar datos para almacenarlos y procesarlos."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 12,
@@ -847,7 +1224,48 @@ window.B26_WEEKS = [
         "codigo = codigo.strip().upper()",
         "print(\"Codigo normalizado:\", codigo)"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Cadena (str)",
+        "definition": "Secuencia de caracteres utilizada para representar texto."
+      },
+      {
+        "term": "strip()",
+        "definition": "Método que elimina espacios de los extremos de una cadena."
+      },
+      {
+        "term": "upper()",
+        "definition": "Método que devuelve una versión en mayúsculas de una cadena."
+      },
+      {
+        "term": "startswith()",
+        "definition": "Método que comprueba si una cadena comienza con un prefijo."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 13,
@@ -924,7 +1342,53 @@ window.B26_WEEKS = [
         "promedio = sum(mediciones) / len(mediciones)",
         "print(\"Promedio:\", promedio)"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Archivo",
+        "definition": "Recurso persistente que almacena datos fuera de la ejecución inmediata del programa."
+      },
+      {
+        "term": "CSV",
+        "definition": "Formato de texto tabular en el que cada fila contiene campos separados por un delimitador."
+      },
+      {
+        "term": "with open(...)",
+        "definition": "Patrón de Python para abrir un archivo y asegurar su cierre al finalizar el bloque."
+      },
+      {
+        "term": "csv.DictReader",
+        "definition": "Herramienta de la biblioteca estándar que interpreta cada fila CSV como un diccionario."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      },
+      {
+        "title": "Python Software Foundation. csv — CSV File Reading and Writing.",
+        "url": "https://docs.python.org/3/library/csv.html",
+        "note": "Referencia oficial para lectura y escritura de archivos CSV."
+      }
+    ]
   },
   {
     "week": 14,
@@ -1003,7 +1467,48 @@ window.B26_WEEKS = [
         "    print(\"Encontrado en indice\", posicion)",
         "else:"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Búsqueda lineal",
+        "definition": "Estrategia que revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección."
+      },
+      {
+        "term": "Ordenamiento",
+        "definition": "Proceso de reorganizar elementos según un criterio."
+      },
+      {
+        "term": "sorted()",
+        "definition": "Función que devuelve una nueva lista ordenada sin modificar la original."
+      },
+      {
+        "term": "Complejidad intuitiva",
+        "definition": "Comparación de cuánto trabajo requiere un procedimiento al aumentar la cantidad de datos."
+      }
+    ],
+    "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 15,
@@ -1063,7 +1568,6 @@ window.B26_WEEKS = [
         "Validar dato antes de procesar."
       ]
     ],
-    "teacher": "Complementar en clase con breakpoint en VS Code y observación de variables paso a paso.",
     "flow_steps": [
       "Sintáctico: falta : en if x > 5.",
       "Ejecución: dividir por cero produce ZeroDivisionError.",
@@ -1080,7 +1584,48 @@ window.B26_WEEKS = [
         "promedio = (a + b + c) / 3",
         "print(promedio)"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Error sintáctico",
+        "definition": "Problema que impide interpretar el código porque no respeta la gramática del lenguaje."
+      },
+      {
+        "term": "Excepción",
+        "definition": "Evento detectado durante la ejecución que interrumpe el flujo normal si no se maneja."
+      },
+      {
+        "term": "Error lógico",
+        "definition": "El programa se ejecuta, pero produce un resultado incorrecto por un problema en la lógica."
+      },
+      {
+        "term": "try/except",
+        "definition": "Estructura de Python para manejar excepciones de manera controlada."
+      }
+    ],
+    "study_tip": "Un programa correcto debe manejar también casos límite y entradas inválidas.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   },
   {
     "week": 16,
@@ -1155,7 +1700,53 @@ window.B26_WEEKS = [
         "print(\"Mediana:\", statistics.median(datos))",
         "print(\"Desviacion estandar:\", statistics.stdev(datos))"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Media",
+        "definition": "Promedio aritmético de un conjunto de valores."
+      },
+      {
+        "term": "Mediana",
+        "definition": "Valor central de los datos una vez ordenados."
+      },
+      {
+        "term": "Desviación estándar",
+        "definition": "Medida de dispersión que indica cuánto tienden a alejarse los datos de su media."
+      },
+      {
+        "term": "Visualización de datos",
+        "definition": "Representación gráfica que facilita identificar patrones, tendencias y valores atípicos."
+      }
+    ],
+    "study_tip": "Una gráfica debe tener título, ejes identificados y una interpretación.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      },
+      {
+        "title": "Python Software Foundation. statistics — Mathematical statistics functions.",
+        "url": "https://docs.python.org/3/library/statistics.html",
+        "note": "Referencia oficial para funciones estadísticas."
+      }
+    ]
   },
   {
     "week": 17,
@@ -1219,7 +1810,6 @@ window.B26_WEEKS = [
         "Aplicar filtros y resumen."
       ]
     ],
-    "teacher": "Para estudiantes con mayor dificultad, puede omitirse lambda y obtener el máximo mediante un recorrido tradicional.",
     "flow_steps": [
       "Crear función cargar_datos().",
       "Leer CSV y almacenar registros como diccionarios.",
@@ -1241,6 +1831,47 @@ window.B26_WEEKS = [
         "    alertas = sum(1 for r in registros if r[\"valor\"] > limite)",
         "    return {"
       ]
-    }
+    },
+    "concepts": [
+      {
+        "term": "Integración",
+        "definition": "Combinación de varias técnicas de programación para resolver un problema completo."
+      },
+      {
+        "term": "Registro",
+        "definition": "Conjunto de campos relacionados que describen una entidad o medición."
+      },
+      {
+        "term": "Validación",
+        "definition": "Comprobación de que los datos cumplen condiciones antes de procesarlos."
+      },
+      {
+        "term": "Prueba de límite",
+        "definition": "Caso de prueba construido alrededor de valores exactamente en un umbral o muy cerca de él."
+      }
+    ],
+    "study_tip": "Divide la solución final en funciones y define casos de prueba antes de darla por terminada.",
+    "references": [
+      {
+        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
+        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
+        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+      },
+      {
+        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
+        "url": "https://ieeexplore.ieee.org/document/9360590",
+        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+      },
+      {
+        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
+        "url": "https://docs.python.org/3/tutorial/",
+        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
+      },
+      {
+        "title": "Pyodide contributors. Pyodide documentation (stable).",
+        "url": "https://pyodide.org/en/stable/",
+        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+      }
+    ]
   }
 ];

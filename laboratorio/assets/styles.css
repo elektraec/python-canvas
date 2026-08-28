@@ -34,3 +34,11 @@ button,input,textarea,select{font:inherit}.topbar{position:sticky;top:0;z-index:
 .exam-q{margin:15px 0;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}.exam-q input{width:100%;margin-top:7px;border:1px solid var(--line);border-radius:8px;padding:9px}
 .hidden{display:none!important}.footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}.mobile-menu{display:none}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{display:none;position:static;height:auto}.sidebar.open{display:block}.grid,.kpis,.career-grid{grid-template-columns:1fr}.main{padding:13px}.hero h2{font-size:23px}.mobile-menu{display:inline-block}}
+
+.concept-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.concept{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+.concept dt{font-weight:800;color:var(--brand);margin-bottom:5px}.concept dd{margin:0;line-height:1.45}
+.study-tip{background:#eef7ff;border-left:4px solid #2774ae;padding:12px 14px;border-radius:9px;margin:12px 0}
+.ref-list{padding-left:20px}.ref-list li{margin:12px 0;line-height:1.45}.ref-list a{color:var(--brand);font-weight:700}
+.file-input{display:none}.statusmsg{font-size:12px;margin-top:8px;min-height:18px}
+@media(max-width:900px){.concept-grid{grid-template-columns:1fr}}
