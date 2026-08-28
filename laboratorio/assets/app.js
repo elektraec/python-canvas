@@ -101,9 +101,9 @@ function examGenerate(){
         <h3 class="exam-question"><span class="exam-number">${i+1}.</span> ${esc(q.question)}</h3>
         <div class="mcq-options">${q.options.map((op,j)=>{
           const looksLikeCode=/[<>=()[\]{}]|<-|\b(if|for|while|def|return|print|input|range)\b/i.test(op);
-          return `<label class="mcq-option">
-            <input type="radio" name="exam${i}" value="${j}">
-            <span class="mcq-letter">${String.fromCharCode(65+j)}</span>
+          return `<label class="mcq-option" for="exam${i}_${j}">
+            <input id="exam${i}_${j}" type="radio" name="exam${i}" value="${j}">
+            <span class="mcq-letter">${String.fromCharCode(65+j)}.</span>
             <span class="${looksLikeCode?'mcq-code':'mcq-text'}">${esc(op)}</span>
           </label>`;
         }).join("")}</div>

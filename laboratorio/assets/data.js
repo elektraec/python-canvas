@@ -105,45 +105,34 @@ window.B26_WEEKS = [
     "exam_bank": [
       {
         "category": "Definición",
-        "question": "¿Cuál opción describe mejor un algoritmo?",
+        "question": "¿Qué significa descomponer un problema?",
         "options": [
-          "Una secuencia ordenada de pasos",
-          "Un conjunto de datos sin ordenar",
-          "Un lenguaje usado solo en Python",
-          "Una gráfica de resultados numéricos"
+          "Dividirlo en partes más pequeñas",
+          "Resolverlo sin separar tareas",
+          "Eliminar los datos de entrada",
+          "Repetir siempre el mismo proceso"
         ],
         "correct": 0
       },
       {
         "category": "Comprensión",
-        "question": "¿Qué significa descomponer un problema?",
+        "question": "En el modelo entrada–proceso–salida, un sensor mide 120 V antes de calcular la potencia. ¿Qué representa el valor de 120 V?",
         "options": [
-          "Resolverlo sin dividir tareas",
-          "Separarlo en partes manejables",
-          "Eliminar los datos de entrada",
-          "Repetir siempre el mismo paso"
-        ],
-        "correct": 1
-      },
-      {
-        "category": "Comprensión",
-        "question": "En el modelo entrada–proceso–salida, ¿qué representa el voltaje medido por un sensor antes de calcular la potencia?",
-        "options": [
+          "Entrada",
           "Proceso",
           "Salida",
-          "Entrada",
           "Algoritmo"
         ],
-        "correct": 2
+        "correct": 0
       },
       {
         "category": "Ejercicio",
-        "question": "Un tanque vacío tiene capacidad de 600 L y recibe un caudal constante de 50 L/min. ¿Qué pseudocódigo calcula correctamente el tiempo de llenado?",
+        "question": "Un tanque de 600 L se llena a 50 L/min. ¿Qué operación permite calcular el tiempo de llenado?",
         "options": [
-          "tiempo <- 600 / 50",
-          "tiempo <- 600 * 50",
-          "tiempo <- 50 / 600",
-          "tiempo <- 600 + 50"
+          "600 / 50",
+          "600 * 50",
+          "50 / 600",
+          "600 + 50"
         ],
         "correct": 0
       },
@@ -152,31 +141,42 @@ window.B26_WEEKS = [
         "question": "Un sensor registra 20 °C, 22 °C y 24 °C. ¿Qué expresión calcula correctamente el promedio?",
         "options": [
           "(20 + 22 + 24) / 3",
+          "(20 + 22 + 24) * 3",
           "20 + 22 + (24 / 3)",
-          "(20 * 22 * 24) / 3",
-          "(20 + 22 + 24) * 3"
+          "(20 * 22 * 24) / 3"
         ],
         "correct": 0
       },
       {
         "category": "Aplicación",
-        "question": "Se desea calcular potencia con P = V × I. ¿Cuál secuencia entrada–proceso–salida es correcta?",
+        "question": "Para calcular la potencia eléctrica con P = V × I, ¿cuál es la salida del algoritmo?",
         "options": [
-          "V e I → multiplicar → P",
-          "P → dividir → V e I",
-          "V → sumar → I",
-          "I y P → restar → V"
+          "Potencia",
+          "Voltaje",
+          "Corriente",
+          "Resistencia"
         ],
         "correct": 0
       },
       {
         "category": "Pensamiento computacional",
-        "question": "Para controlar el llenado automático de un tanque, ¿qué descomposición es más adecuada?",
+        "question": "¿Cuál secuencia representa mejor el control automático de llenado de un tanque?",
         "options": [
-          "Medir nivel → decidir → activar/detener bomba",
-          "Encender bomba → ignorar nivel → esperar",
+          "Medir nivel → decidir → activar o detener bomba",
+          "Activar bomba → ignorar nivel → finalizar",
           "Mostrar resultado → borrar datos → medir",
-          "Repetir lectura → no decidir → finalizar"
+          "Medir nivel → no decidir → repetir"
+        ],
+        "correct": 0
+      },
+      {
+        "category": "Definición",
+        "question": "¿Cuál opción describe mejor un algoritmo?",
+        "options": [
+          "Una secuencia ordenada de pasos",
+          "Un conjunto de datos sin ordenar",
+          "Una gráfica de resultados",
+          "Un lenguaje exclusivo de Python"
         ],
         "correct": 0
       }
