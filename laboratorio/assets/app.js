@@ -52,15 +52,114 @@ function renderWeek(n,tab){let wi=W.findIndex(w=>w.week===n);if(wi<0)return;curr
  let cu=colabUrl(w);$("#content").innerHTML=`<section class="hero"><div class="muted" style="color:#fff;opacity:.8">PROGRAMACIÓN Y PENSAMIENTO COMPUTACIONAL · B26</div><h2>Semana ${w.week} — ${esc(w.title)}</h2><p>${esc(w.focus)}</p></section>
  
  <div class="activity-tabs"><button class="btn tabbtn active" data-panel="lesson">📘 Clase</button><button class="btn tabbtn" data-panel="parsons">🧩 Ordenar código</button><button class="btn tabbtn" data-panel="flow">🔀 Flujo</button><button class="btn tabbtn" data-panel="random">🎲 Aleatorio</button><button class="btn tabbtn" data-panel="resources">📚 Conceptos y fuentes</button>${w.language==="Python"&&cu?`<a class="btn good" target="_blank" rel="noopener" href="${cu}">🚀 Abrir en Colab</a>`:""}</div>
- <section id="lesson" class="panel active"><div class="grid">${w.exercises.map((_,ei)=>exerciseHTML(wi,ei)).join("")}</div><div class="card" style="margin-top:15px"><h3>Aplicación rápida por carrera</h3><div class="career-grid">${w.careers.map(c=>`<div class="career"><strong>${esc(c[0])}</strong><p>${esc(c[1])}</p><div class="muted">${esc(c[2])}</div></div>`).join("")}</div></div></section>
+ <section id="lesson" class="panel active"><div class="grid">${w.exercises.map((_,ei)=>exerciseHTML(wi,ei)).join("")}</div><div class="card" style="margin-top:15px"><h3>Aplicaciones en ingeniería</h3><div class="career-grid">${w.careers.map(c=>`<div class="career"><strong>${esc(c[0])}</strong><p>${esc(c[1])}</p><div class="muted">${esc(c[2])}</div></div>`).join("")}</div></div></section>
  <section id="parsons" class="panel">${parsonsHTML(wi)}</section><section id="flow" class="panel">${flowHTML(wi)}</section><section id="random" class="panel">${randomQuizHTML(wi)}</section><section id="resources" class="panel">${resourcesHTML(wi)}</section>`;
  tabsInit();initDrag();updateStats();if(tab){let b=$(`.tabbtn[data-panel="${tab}"]`);if(b)b.click()}window.scrollTo({top:0,behavior:"smooth"});}
 window.renderWeek=renderWeek;
 
-function examStart(){let pool=[];W.forEach((w,wi)=>w.exercises.forEach((e,ei)=>pool.push({w,wi,e,ei})));pool=shuffled(pool).slice(0,5);sessionStorage.setItem("b26exam",JSON.stringify(pool.map(x=>({wi:x.wi,ei:x.ei}))));$("#content").innerHTML=`<section class="hero"><h2>📝 Modo examen</h2><p>5 preguntas aleatorias. Las soluciones permanecen ocultas hasta enviar.</p></section><div id="examQuestions">${pool.map((x,i)=>`<div class="exam-q"><b>${i+1}. Semana ${x.w.week}</b><p>${esc(x.e.check.question)}</p><input id="exam${i}" placeholder="Respuesta"></div>`).join("")}</div><button class="btn primary" onclick="examSubmit()">Enviar examen</button><div id="examResult" class="card" style="margin-top:14px"></div>`;}
+
+function examStart(){
+  const options=W.map(w=>`<option value="${w.week}">Semana ${w.week} — ${esc(w.title)}</option>`).join("");
+  $("#content").innerHTML=`
+    <section class="hero">
+      <h2>📝 Modo examen</h2>
+      <p>Selecciona una semana. Se generarán preguntas aleatorias únicamente de ese tema.</p>
+    </section>
+    <div class="card">
+      <h3>Configurar examen</h3>
+      <label for="examWeek"><b>Semana</b></label>
+      <select id="examWeek" style="width:100%;margin:8px 0 14px;padding:10px;border:1px solid var(--line);border-radius:9px">
+        ${options}
+      </select>
+      <label for="examCount"><b>Número de preguntas</b></label>
+      <select id="examCount" style="width:100%;margin:8px 0 14px;padding:10px;border:1px solid var(--line);border-radius:9px">
+        <option value="2">2 preguntas</option>
+        <option value="3" selected>3 preguntas</option>
+        <option value="5">5 preguntas</option>
+      </select>
+      <button class="btn primary" onclick="examGenerate()">Generar examen</button>
+    </div>`;
+}
 window.examStart=examStart;
-function examSubmit(){let ids=JSON.parse(sessionStorage.getItem("b26exam")||"[]"),score=0,details=[];ids.forEach((x,i)=>{let e=W[x.wi].exercises[x.ei],c=e.check,v=document.getElementById("exam"+i).value,ok=c.type==="number"?Math.abs(Number(String(v).replace(",","."))-Number(c.answer))<1e-6:norm(v)===norm(c.answer);if(ok)score++;details.push(`<li>${ok?"✓":"✗"} ${esc(e.check.question)} <b>Respuesta:</b> ${esc(c.answer)}</li>`)});let pct=Math.round(score/ids.length*100),s=store();if(pct>s.examBest)s.examBest=pct;write(s);updateStats();$("#examResult").innerHTML=`<h3>Resultado: ${score}/${ids.length} (${pct}%)</h3><ol>${details.join("")}</ol><button class="btn" onclick="examStart()">Nuevo examen</button>`;}
+
+function examGenerate(){
+  const weekNum=Number(document.getElementById("examWeek").value);
+  const requested=Number(document.getElementById("examCount").value);
+  const wi=W.findIndex(w=>w.week===weekNum);
+  const w=W[wi];
+
+  // Pool: ejercicios de la semana + preguntas derivadas de conceptos.
+  let pool=w.exercises.map((e,ei)=>({
+    kind:"exercise",
+    wi,ei,
+    question:e.check.question,
+    answer:e.check.answer,
+    type:e.check.type
+  }));
+
+  w.concepts.forEach(c=>{
+    pool.push({
+      kind:"concept",
+      question:`Escribe el término que corresponde a esta definición: ${c.definition}`,
+      answer:c.term,
+      type:"text"
+    });
+  });
+
+  pool=shuffled(pool).slice(0,Math.min(requested,pool.length));
+  sessionStorage.setItem("b26exam",JSON.stringify({week:weekNum,items:pool}));
+
+  $("#content").innerHTML=`
+    <section class="hero">
+      <h2>📝 Examen · Semana ${w.week}</h2>
+      <p>${esc(w.title)} · ${pool.length} preguntas</p>
+    </section>
+    <div id="examQuestions">
+      ${pool.map((q,i)=>`
+        <div class="exam-q">
+          <b>${i+1}.</b>
+          <p>${esc(q.question)}</p>
+          <input id="exam${i}" placeholder="Respuesta" autocomplete="off">
+        </div>`).join("")}
+    </div>
+    <div class="toolbar">
+      <button class="btn primary" onclick="examSubmit()">Enviar examen</button>
+      <button class="btn" onclick="examStart()">Cambiar semana</button>
+    </div>
+    <div id="examResult" class="card" style="margin-top:14px"></div>`;
+}
+window.examGenerate=examGenerate;
+
+function examSubmit(){
+  const saved=JSON.parse(sessionStorage.getItem("b26exam")||'{"items":[]}');
+  const items=saved.items||[];
+  let score=0,details=[];
+
+  items.forEach((q,i)=>{
+    const v=document.getElementById("exam"+i).value;
+    const ok=q.type==="number"
+      ? Number.isFinite(Number(String(v).replace(",","."))) && Math.abs(Number(String(v).replace(",","."))-Number(q.answer))<1e-6
+      : norm(v)===norm(q.answer);
+    if(ok) score++;
+    details.push(`<li>${ok?"✓":"✗"} ${esc(q.question)}<br><b>Respuesta esperada:</b> ${esc(q.answer)}</li>`);
+  });
+
+  const pct=items.length?Math.round(score/items.length*100):0;
+  let s=store();
+  if(pct>s.examBest)s.examBest=pct;
+  write(s);
+  updateStats();
+
+  $("#examResult").innerHTML=`
+    <h3>Resultado: ${score}/${items.length} (${pct}%)</h3>
+    <ol>${details.join("")}</ol>
+    <div class="toolbar">
+      <button class="btn primary" onclick="examGenerate()">Nuevo examen de esta semana</button>
+      <button class="btn" onclick="examStart()">Elegir otra semana</button>
+    </div>`;
+}
 window.examSubmit=examSubmit;
+
 
 function exportProgress(){
   const payload={format:"B26_PROGRESS_V3",exportedAt:new Date().toISOString(),state:store()};

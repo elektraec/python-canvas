@@ -97,14 +97,9 @@ window.B26_WEEKS = [
     "study_tip": "Antes de escribir pseudocódigo, identifica siempre entradas, proceso y salida.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+        "title": "PSeInt — sitio oficial",
+        "url": "https://pseint.sourceforge.net/",
+        "note": "Úsalo como apoyo para practicar algoritmos, pseudocódigo y diagramas antes de programar en Python."
       }
     ]
   },
@@ -207,14 +202,9 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+        "title": "PSeInt — sitio oficial",
+        "url": "https://pseint.sourceforge.net/",
+        "note": "Apoyo para variables, entrada/salida, operadores y expresiones en pseudocódigo."
       }
     ]
   },
@@ -315,14 +305,9 @@ window.B26_WEEKS = [
     "study_tip": "Prueba cada condición con un valor que la cumpla y otro que no.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
+        "title": "PSeInt — sitio oficial",
+        "url": "https://pseint.sourceforge.net/",
+        "note": "Apoyo para condiciones, decisiones y estructuras Si / SiNo."
       }
     ]
   },
@@ -422,24 +407,14 @@ window.B26_WEEKS = [
     "study_tip": "Compara una solución en PSeInt con su versión en Python y observa qué cambia y qué permanece.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+        "title": "Python — Tutorial oficial en español: una introducción informal",
+        "url": "https://docs.python.org/es/3/tutorial/introduction.html",
+        "note": "Consulta ejemplos básicos de números, texto, variables y primeras expresiones."
       },
       {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: control de flujo",
+        "url": "https://docs.python.org/es/3/tutorial/controlflow.html",
+        "note": "Revisa if, elif, else e indentación."
       }
     ]
   },
@@ -538,24 +513,9 @@ window.B26_WEEKS = [
     "study_tip": "En cada while identifica: estado inicial, condición y actualización.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: while y control de flujo",
+        "url": "https://docs.python.org/es/3/tutorial/introduction.html#first-steps-towards-programming",
+        "note": "Ejemplos introductorios de repetición con while."
       }
     ]
   },
@@ -656,24 +616,9 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: for y range()",
+        "url": "https://docs.python.org/es/3/tutorial/controlflow.html#for-statements",
+        "note": "Ejemplos directos de for, range() y recorridos."
       }
     ]
   },
@@ -775,24 +720,9 @@ window.B26_WEEKS = [
     "study_tip": "Una buena función realiza una tarea clara y puede probarse de manera independiente.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: definición de funciones",
+        "url": "https://docs.python.org/es/3/tutorial/controlflow.html#defining-functions",
+        "note": "Explica def, parámetros, argumentos y return."
       }
     ]
   },
@@ -900,24 +830,14 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+        "title": "Python — Tutorial oficial en español: errores y excepciones",
+        "url": "https://docs.python.org/es/3/tutorial/errors.html",
+        "note": "Úsalo para repasar errores, pruebas y depuración básica."
       },
       {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español",
+        "url": "https://docs.python.org/es/3/tutorial/",
+        "note": "Referencia general para repasar programación estructurada."
       }
     ]
   },
@@ -1015,24 +935,14 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+        "title": "Python — Tutorial oficial en español: listas",
+        "url": "https://docs.python.org/es/3/tutorial/introduction.html#lists",
+        "note": "Explica listas, índices y operaciones básicas."
       },
       {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: estructuras de datos",
+        "url": "https://docs.python.org/es/3/tutorial/datastructures.html",
+        "note": "Amplía operaciones y recorridos con listas."
       }
     ]
   },
@@ -1133,24 +1043,9 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: estructuras de datos",
+        "url": "https://docs.python.org/es/3/tutorial/datastructures.html",
+        "note": "Consulta listas, tuplas, conjuntos y diccionarios para comparar estructuras."
       }
     ]
   },
@@ -1246,24 +1141,9 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: cadenas",
+        "url": "https://docs.python.org/es/3/tutorial/introduction.html#text",
+        "note": "Ejemplos claros de texto, índices, cortes y operaciones con cadenas."
       }
     ]
   },
@@ -1364,29 +1244,14 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+        "title": "Python — Tutorial oficial en español: lectura y escritura de archivos",
+        "url": "https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files",
+        "note": "Introducción a open(), with y lectura/escritura de archivos."
       },
       {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
-      },
-      {
-        "title": "Python Software Foundation. csv — CSV File Reading and Writing.",
-        "url": "https://docs.python.org/3/library/csv.html",
-        "note": "Referencia oficial para lectura y escritura de archivos CSV."
+        "title": "Python — Biblioteca estándar: csv",
+        "url": "https://docs.python.org/es/3/library/csv.html",
+        "note": "Referencia para csv.reader y csv.DictReader."
       }
     ]
   },
@@ -1489,24 +1354,9 @@ window.B26_WEEKS = [
     "study_tip": "Revisa los conceptos clave antes de resolver y comprueba tus resultados con al menos un caso sencillo.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: listas y sorted()",
+        "url": "https://docs.python.org/es/3/tutorial/datastructures.html",
+        "note": "Repasa recorridos, ordenamiento y operaciones sobre listas."
       }
     ]
   },
@@ -1606,24 +1456,9 @@ window.B26_WEEKS = [
     "study_tip": "Un programa correcto debe manejar también casos límite y entradas inválidas.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
-      },
-      {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Tutorial oficial en español: errores y excepciones",
+        "url": "https://docs.python.org/es/3/tutorial/errors.html",
+        "note": "Explica errores sintácticos, excepciones y try/except."
       }
     ]
   },
@@ -1722,29 +1557,14 @@ window.B26_WEEKS = [
     "study_tip": "Una gráfica debe tener título, ejes identificados y una interpretación.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+        "title": "Python — Biblioteca estándar: statistics",
+        "url": "https://docs.python.org/es/3/library/statistics.html",
+        "note": "Consulta mean(), median() y stdev()."
       },
       {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
-      },
-      {
-        "title": "Python Software Foundation. statistics — Mathematical statistics functions.",
-        "url": "https://docs.python.org/3/library/statistics.html",
-        "note": "Referencia oficial para funciones estadísticas."
+        "title": "Matplotlib — Pyplot tutorial",
+        "url": "https://matplotlib.org/stable/tutorials/pyplot.html",
+        "note": "Guía introductoria para crear y rotular gráficas sencillas."
       }
     ]
   },
@@ -1853,24 +1673,14 @@ window.B26_WEEKS = [
     "study_tip": "Divide la solución final en funciones y define casos de prueba antes de darla por terminada.",
     "references": [
       {
-        "title": "ACM/IEEE-CS et al. Computing Curricula 2020: Paradigms for Global Computing Education.",
-        "url": "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
-        "note": "Marco internacional de referencia para educación en computación con enfoque por competencias."
+        "title": "Python — Tutorial oficial en español",
+        "url": "https://docs.python.org/es/3/tutorial/",
+        "note": "Referencia de repaso para integrar funciones, estructuras de datos, archivos y manejo de errores."
       },
       {
-        "title": "Castro, Magana, Douglas & Boutin. Analyzing Students’ Computational Thinking Practices in a First-Year Engineering Course.",
-        "url": "https://ieeexplore.ieee.org/document/9360590",
-        "note": "Investigación sobre pensamiento computacional en estudiantes de primer año de ingeniería."
-      },
-      {
-        "title": "Python Software Foundation. The Python Tutorial — Python 3.14 documentation.",
-        "url": "https://docs.python.org/3/tutorial/",
-        "note": "Referencia oficial para sintaxis, control de flujo, funciones, estructuras de datos, archivos y excepciones."
-      },
-      {
-        "title": "Pyodide contributors. Pyodide documentation (stable).",
-        "url": "https://pyodide.org/en/stable/",
-        "note": "Documentación del entorno que ejecuta Python en el navegador mediante WebAssembly."
+        "title": "Python — Biblioteca estándar: csv",
+        "url": "https://docs.python.org/es/3/library/csv.html",
+        "note": "Apoyo para el procesamiento de archivos CSV del proyecto integrador."
       }
     ]
   }
