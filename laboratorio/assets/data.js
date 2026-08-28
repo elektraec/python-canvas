@@ -118,7 +118,7 @@ window.B26_WEEKS = [
         "category": "Comprensión",
         "question": "¿Qué significa descomponer un problema?",
         "options": [
-          "Resolverlo sin dividir tareas (opción alternativa)",
+          "Resolverlo sin dividir tareas",
           "Separarlo en partes manejables",
           "Eliminar los datos de entrada",
           "Repetir siempre el mismo paso"
@@ -163,7 +163,7 @@ window.B26_WEEKS = [
         "question": "Se desea calcular potencia con P = V × I. ¿Cuál secuencia entrada–proceso–salida es correcta?",
         "options": [
           "V e I → multiplicar → P",
-          "P → dividir → V e I (opción alternativa)",
+          "P → dividir → V e I",
           "V → sumar → I",
           "I y P → restar → V"
         ],
@@ -174,7 +174,7 @@ window.B26_WEEKS = [
         "question": "Para controlar el llenado automático de un tanque, ¿qué descomposición es más adecuada?",
         "options": [
           "Medir nivel → decidir → activar/detener bomba",
-          "Encender bomba → ignorar nivel → esperar (opción alternativa)",
+          "Encender bomba → ignorar nivel → esperar",
           "Mostrar resultado → borrar datos → medir",
           "Repetir lectura → no decidir → finalizar"
         ],
@@ -314,7 +314,7 @@ window.B26_WEEKS = [
         "question": "¿Qué concepto corresponde a esta definición? Símbolo que realiza operaciones como suma, resta, multiplicación o división.",
         "options": [
           "Operador aritmético",
-          "Asignación (opción alternativa)",
+          "Asignación",
           "Expresión",
           "Variable"
         ],
@@ -485,7 +485,7 @@ window.B26_WEEKS = [
         "question": "¿Qué concepto corresponde a esta definición? Compara valores, por ejemplo mayor que, menor que o igual.",
         "options": [
           "Operador relacional",
-          "Operador lógico (opción alternativa)",
+          "Operador lógico",
           "Condicional",
           "Condición"
         ],
@@ -682,7 +682,7 @@ window.B26_WEEKS = [
         "question": "¿Qué concepto corresponde a esta definición? Transformación explícita de un dato, por ejemplo de texto a int o float.",
         "options": [
           "input()",
-          "Indentación (opción alternativa)",
+          "Indentación",
           "Conversión de tipo",
           "Python"
         ],
@@ -875,7 +875,7 @@ window.B26_WEEKS = [
           "Contador",
           "while",
           "Ciclo infinito",
-          "Acumulador (opción alternativa)"
+          "Acumulador"
         ],
         "correct": 2
       },
@@ -1057,7 +1057,7 @@ window.B26_WEEKS = [
           "Máximo y mínimo",
           "for",
           "range()",
-          "Iteración (opción alternativa)"
+          "Iteración"
         ],
         "correct": 0
       },
@@ -1398,7 +1398,7 @@ window.B26_WEEKS = [
         "category": "Definición",
         "question": "¿Qué concepto corresponde a esta definición? Organización de programas mediante secuencias, decisiones, ciclos y funciones.",
         "options": [
-          "Caso de prueba (opción alternativa)",
+          "Caso de prueba",
           "Programación estructurada",
           "Depuración",
           "Trazado"
@@ -1467,7 +1467,7 @@ window.B26_WEEKS = [
           "Algoritmo",
           "Depuración",
           "Programación estructurada",
-          "Caso de prueba (opción alternativa)"
+          "Caso de prueba"
         ],
         "correct": 2
       }
@@ -1616,7 +1616,7 @@ window.B26_WEEKS = [
         "question": "¿Qué concepto corresponde a esta definición? Proceso de visitar los elementos de una colección uno por uno.",
         "options": [
           "Recorrido",
-          "append() (opción alternativa)",
+          "append()",
           "Índice",
           "Lista"
         ],
@@ -1798,7 +1798,7 @@ window.B26_WEEKS = [
         "question": "¿Qué concepto corresponde a esta definición? Forma de organizar datos para almacenarlos y procesarlos.",
         "options": [
           "Estructura de datos",
-          "Lista anidada (opción alternativa)",
+          "Lista anidada",
           "Diccionario",
           "Tupla"
         ],
@@ -2347,7 +2347,7 @@ window.B26_WEEKS = [
         "options": [
           "sorted()",
           "Complejidad intuitiva",
-          "Búsqueda lineal (opción alternativa)",
+          "Búsqueda lineal",
           "Ordenamiento"
         ],
         "correct": 1
@@ -2494,7 +2494,7 @@ window.B26_WEEKS = [
         "question": "¿Qué concepto corresponde a esta definición? Problema que impide interpretar el código porque no respeta la gramática del lenguaje.",
         "options": [
           "Excepción",
-          "Error lógico (opción alternativa)",
+          "Error lógico",
           "Error sintáctico",
           "try/except"
         ],
@@ -2562,7 +2562,7 @@ window.B26_WEEKS = [
           "try/except",
           "Excepción",
           "Error sintáctico",
-          "Error lógico (opción alternativa)"
+          "Error lógico"
         ],
         "correct": 2
       }
@@ -2712,7 +2712,7 @@ window.B26_WEEKS = [
         "question": "¿Qué concepto corresponde a esta definición? Representación gráfica que facilita identificar patrones, tendencias y valores atípicos.",
         "options": [
           "Media",
-          "Desviación estándar (opción alternativa)",
+          "Desviación estándar",
           "Mediana",
           "Visualización de datos"
         ],
@@ -2908,7 +2908,7 @@ window.B26_WEEKS = [
         "options": [
           "Validación",
           "Prueba de límite",
-          "Integración (opción alternativa)",
+          "Integración",
           "Registro"
         ],
         "correct": 1
@@ -2939,7 +2939,7 @@ window.B26_WEEKS = [
         "category": "Comprensión",
         "question": "Selecciona el concepto relacionado con esta idea: Combinación de varias técnicas de programación para resolver un problema completo.",
         "options": [
-          "Validación (opción alternativa)",
+          "Validación",
           "Integración",
           "Algoritmo",
           "Registro"

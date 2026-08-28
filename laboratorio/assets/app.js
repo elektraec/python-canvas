@@ -96,10 +96,18 @@ function examGenerate(){
   $("#content").innerHTML=`
     <section class="hero"><h2>📝 Examen · Semana ${w.week}</h2><p>${esc(w.title)} · ${pool.length} preguntas</p></section>
     <div id="examQuestions">${pool.map((q,i)=>`
-      <fieldset class="exam-q"><legend><span class="badge">${esc(q.category||"Pregunta")}</span> <b>${i+1}.</b> ${esc(q.question)}</legend>
-      <div class="mcq-options">${q.options.map((op,j)=>`
-        <label class="mcq-option"><input type="radio" name="exam${i}" value="${j}"> <code>${esc(op)}</code></label>`).join("")}</div>
-      </fieldset>`).join("")}</div>
+      <section class="exam-card">
+        <div class="exam-meta"><span class="badge">${esc(q.category||"Pregunta")}</span></div>
+        <h3 class="exam-question"><span class="exam-number">${i+1}.</span> ${esc(q.question)}</h3>
+        <div class="mcq-options">${q.options.map((op,j)=>{
+          const looksLikeCode=/[<>=()[\]{}]|<-|\b(if|for|while|def|return|print|input|range)\b/i.test(op);
+          return `<label class="mcq-option">
+            <input type="radio" name="exam${i}" value="${j}">
+            <span class="mcq-letter">${String.fromCharCode(65+j)}</span>
+            <span class="${looksLikeCode?'mcq-code':'mcq-text'}">${esc(op)}</span>
+          </label>`;
+        }).join("")}</div>
+      </section>`).join("")}</div>
     <div class="toolbar"><button class="btn primary" onclick="examSubmit()">Enviar examen</button><button class="btn" onclick="examStart()">Cambiar semana</button></div>
     <div id="examResult" class="card" style="margin-top:14px"></div>`;
 }
@@ -112,12 +120,12 @@ function examSubmit(){
     const picked=document.querySelector(`input[name="exam${i}"]:checked`);
     const selected=picked?Number(picked.value):-1,ok=selected===q.correct;
     if(ok)score++;
-    details.push(`<li>${ok?"✓":"✗"} ${esc(q.question)}<br><b>Respuesta correcta:</b> <code>${esc(q.options[q.correct])}</code></li>`);
+    details.push(`<li class="result-item ${ok?'ok':'bad'}"><b>${ok?"✓ Correcta":"✗ Incorrecta"}</b><div>${esc(q.question)}</div><div class="answer-key">Respuesta correcta: <strong>${esc(q.options[q.correct])}</strong></div></li>`);
   });
   const pct=items.length?Math.round(score/items.length*100):0;
   const answered=items.filter((q,i)=>document.querySelector(`input[name="exam${i}"]:checked`)).length;
   let s=store();if(pct>s.examBest)s.examBest=pct;write(s);updateStats();
-  $("#examResult").innerHTML=`<h3>Resultado: ${score}/${items.length} (${pct}%)</h3><p class="muted">Respondidas: ${answered}/${items.length}</p><ol>${details.join("")}</ol>
+  $("#examResult").innerHTML=`<h3>Resultado: ${score}/${items.length} (${pct}%)</h3><p class="muted">Respondidas: ${answered}/${items.length}</p><ol class="result-list">${details.join("")}</ol>
     <div class="toolbar"><button class="btn primary" onclick="examGenerate()">Nuevo examen de esta semana</button><button class="btn" onclick="examStart()">Elegir otra semana</button></div>`;
 }
 window.examSubmit=examSubmit;
