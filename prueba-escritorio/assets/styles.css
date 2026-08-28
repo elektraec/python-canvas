@@ -119,3 +119,14 @@ pre{margin:0;background:var(--code);color:var(--codefg);padding:16px;border-radi
 .source-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.source-card{display:flex;flex-direction:column;gap:5px;border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--text);background:#fff}.source-card:hover{border-color:#bca6c7;background:#fcf9fd}.source-card span{color:var(--muted);font-size:.9rem}
 .output-input.ok{border-color:#69b58c;background:#effaf4}.output-input.bad{border-color:#df8a82;background:#fff3f2}
 @media(max-width:760px){.home-guide{align-items:flex-start;flex-direction:column}.learn-grid,.source-grid{grid-template-columns:1fr}}
+
+
+/* Python Tutor integrado · v6 */
+.btn.tutor-btn{background:#eef4ff;border-color:#c9d8f3;color:#244f85}
+.tutor-inline{display:none;margin-top:14px}.tutor-inline.show{display:block}
+.tutor-panel{margin-top:14px;border:1px solid var(--line);border-radius:14px;padding:16px;background:#fbfcfe}
+.tutor-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}.tutor-head h3{margin:4px 0 5px}.tutor-head p{margin:0;color:var(--muted);line-height:1.5}
+.tutor-placeholder{padding:18px;border:1px dashed #bfc8d6;border-radius:12px;background:#fff;text-align:center}.tutor-placeholder p{margin:0 0 12px;color:var(--muted)}
+.tutor-frame-wrap{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff}.tutor-frame-wrap iframe{display:block;width:100%;height:620px;border:0;background:#fff}
+.tutor-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;color:var(--muted);font-size:.86rem}.tutor-foot .btn{text-decoration:none;white-space:nowrap}
+@media(max-width:760px){.tutor-head,.tutor-foot{flex-direction:column;align-items:flex-start}.tutor-frame-wrap iframe{height:700px}.tutor-foot .btn{white-space:normal}}
