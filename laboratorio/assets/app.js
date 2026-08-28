@@ -48,11 +48,91 @@ function resourcesHTML(wi){
   <ul class="ref-list">${w.references.map(r=>`<li><a href="${r.url}" target="_blank" rel="noopener">${esc(r.title)}</a><br><span class="muted">${esc(r.note)}</span></li>`).join("")}</ul></div>`;
 }
 
+
+function youtubeId(url){
+  if(!url) return "";
+  const s=String(url).trim();
+  const patterns=[
+    /youtu\.be\/([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/watch\?[^#]*v=([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/,
+    /youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/
+  ];
+  for(const p of patterns){
+    const m=s.match(p);
+    if(m) return m[1];
+  }
+  return "";
+}
+
+function weekVideos(weekNumber){
+  const source=window.B26_VIDEOS||{};
+  const list=source[weekNumber]||source[String(weekNumber)]||[];
+  return Array.isArray(list)?list.slice(0,3):[];
+}
+
+function renderVideos(w){
+  const videos=weekVideos(w.week);
+
+  if(!videos.length){
+    return `<div class="card video-empty">
+      <h3>🎥 Microvideos de la semana</h3>
+      <p class="muted">Aún no hay microvideos publicados para esta semana.</p>
+    </div>`;
+  }
+
+  return `<section class="video-section">
+    <div class="section-heading">
+      <div>
+        <h3>🎥 Microvideos de la semana</h3>
+        <p class="muted">Videos breves para comprender o repasar el tema antes de practicar.</p>
+      </div>
+      <span class="badge">${videos.length} video${videos.length===1?"":"s"}</span>
+    </div>
+
+    <div class="video-grid">
+      ${videos.map((v,i)=>{
+        const id=youtubeId(v.url);
+
+        if(!id){
+          return `<article class="video-card">
+            <div class="video-card-body">
+              <span class="video-kicker">Video ${i+1}</span>
+              <h4>${esc(v.title||`Microvideo ${i+1}`)}</h4>
+              <p class="muted">El enlace de YouTube no es válido.</p>
+            </div>
+          </article>`;
+        }
+
+        return `<article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/${id}?rel=0"
+              title="${esc(v.title||`Microvideo ${i+1}`)}"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="video-card-body">
+            <span class="video-kicker">Video ${i+1}${v.duration?` · ${esc(v.duration)}`:""}</span>
+            <h4>${esc(v.title||`Microvideo ${i+1}`)}</h4>
+            ${v.description?`<p>${esc(v.description)}</p>`:""}
+            <a class="btn small" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Abrir en YouTube ↗</a>
+          </div>
+        </article>`;
+      }).join("")}
+    </div>
+  </section>`;
+}
+
 function renderWeek(n,tab){let wi=W.findIndex(w=>w.week===n);if(wi<0)return;currentWeek=n;let w=W[wi];$$(".navbtn").forEach(b=>b.classList.toggle("active",+b.dataset.week===n));history.replaceState(null,"",`${location.pathname}?semana=${n}`);
  let cu=colabUrl(w);$("#content").innerHTML=`<section class="hero"><div class="muted" style="color:#fff;opacity:.8">PROGRAMACIÓN Y PENSAMIENTO COMPUTACIONAL · B26</div><h2>Semana ${w.week} — ${esc(w.title)}</h2><p>${esc(w.focus)}</p></section>
  
- <div class="activity-tabs"><button class="btn tabbtn active" data-panel="lesson">📘 Clase</button><button class="btn tabbtn" data-panel="parsons">🧩 Ordenar código</button><button class="btn tabbtn" data-panel="flow">🔀 Flujo</button><button class="btn tabbtn" data-panel="random">🎲 Aleatorio</button><button class="btn tabbtn" data-panel="resources">📚 Conceptos y fuentes</button>${w.language==="Python"&&cu?`<a class="btn good" target="_blank" rel="noopener" href="${cu}">🚀 Abrir en Colab</a>`:""}</div>
+ <div class="activity-tabs"><button class="btn tabbtn active" data-panel="lesson">📘 Clase</button><button class="btn tabbtn" data-panel="videos">🎥 Microvideos${weekVideos(w.week).length?` (${weekVideos(w.week).length})`:""}</button><button class="btn tabbtn" data-panel="parsons">🧩 Ordenar código</button><button class="btn tabbtn" data-panel="flow">🔀 Flujo</button><button class="btn tabbtn" data-panel="random">🎲 Aleatorio</button><button class="btn tabbtn" data-panel="resources">📚 Conceptos y fuentes</button>${w.language==="Python"&&cu?`<a class="btn good" target="_blank" rel="noopener" href="${cu}">🚀 Abrir en Colab</a>`:""}</div>
  <section id="lesson" class="panel active"><div class="grid">${w.exercises.map((_,ei)=>exerciseHTML(wi,ei)).join("")}</div><div class="card" style="margin-top:15px"><h3>Aplicaciones en ingeniería</h3><div class="career-grid">${w.careers.map(c=>`<div class="career"><strong>${esc(c[0])}</strong><p>${esc(c[1])}</p><div class="muted">${esc(c[2])}</div></div>`).join("")}</div></div></section>
+ <section id="videos" class="panel">${renderVideos(w)}</section>
  <section id="parsons" class="panel">${parsonsHTML(wi)}</section><section id="flow" class="panel">${flowHTML(wi)}</section><section id="random" class="panel">${randomQuizHTML(wi)}</section><section id="resources" class="panel">${resourcesHTML(wi)}</section>`;
  tabsInit();initDrag();updateStats();if(tab){let b=$(`.tabbtn[data-panel="${tab}"]`);if(b)b.click()}window.scrollTo({top:0,behavior:"smooth"});}
 window.renderWeek=renderWeek;

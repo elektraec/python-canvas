@@ -188,3 +188,89 @@ button,input,textarea,select{font:inherit}.topbar{position:sticky;top:0;z-index:
     gap:7px !important;
   }
 }
+
+
+/* ===== Microvideos v10 ===== */
+.video-section{
+  display:block;
+  width:100%;
+}
+
+.section-heading{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.section-heading h3{
+  margin:0 0 4px 0;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
+  align-items:start;
+}
+
+.video-card{
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+.video-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#111;
+}
+
+.video-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+.video-card-body{
+  padding:14px;
+}
+
+.video-card-body h4{
+  margin:4px 0 8px 0;
+  line-height:1.35;
+}
+
+.video-card-body p{
+  margin:0 0 12px 0;
+  line-height:1.45;
+}
+
+.video-kicker{
+  display:block;
+  font-size:.82rem;
+  font-weight:700;
+  opacity:.68;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+}
+
+.video-empty{
+  text-align:left;
+}
+
+@media (max-width:700px){
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+  .section-heading{
+    flex-direction:column;
+  }
+}
