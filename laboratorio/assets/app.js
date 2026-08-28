@@ -32,15 +32,104 @@ function togglePythonTutor(ed,panelId,frameId,linkId,btnId){
  if(btn)btn.textContent="▲ Ocultar Python Tutor";
 }
 window.togglePythonTutor=togglePythonTutor;
-async function runPython(ed,out,btn){let o=document.getElementById(out),b=document.getElementById(btn);b.disabled=true;b.textContent="Cargando…";o.textContent="Preparando Python…";try{let py=await ensurePy();await py.runPythonAsync("import sys,io\n_stdout=io.StringIO()\nsys.stdout=_stdout");try{await py.runPythonAsync(document.getElementById(ed).value);o.textContent=py.runPython("_stdout.getvalue()")||"(Ejecutado sin salida)"}catch(e){o.textContent=String(e)}}catch(e){o.textContent="No se pudo cargar Pyodide.\n"+e}finally{b.disabled=false;b.textContent="▶ Ejecutar Python"}} window.runPython=runPython;
+function friendlyPythonError(raw){
+ const s=String(raw||"");
+ const rules=[
+  [/IndentationError|TabError/i,"Revisa la sangría. Python usa la indentación para saber qué instrucciones pertenecen a un bloque (if, for, while, funciones, etc.)."],
+  [/SyntaxError/i,"Hay un problema de sintaxis. Revisa paréntesis, dos puntos (:), comillas y la forma de escribir la instrucción marcada."],
+  [/NameError/i,"Se está usando un nombre o variable que Python no reconoce. Comprueba que esté escrito igual y que haya sido definido antes."],
+  [/ValueError/i,"El valor recibido no tiene el formato esperado. Si usas int() o float(), ingresa un número válido."],
+  [/TypeError/i,"Se están combinando tipos de datos incompatibles o una operación recibió un tipo de valor que no esperaba."],
+  [/ZeroDivisionError/i,"El programa intentó dividir para cero. Revisa el divisor antes de realizar la operación."],
+  [/IndexError/i,"Se intentó acceder a una posición que no existe en una lista o secuencia."],
+  [/KeyError/i,"Se intentó usar una clave que no existe en el diccionario."],
+  [/EOFError/i,"El programa esperaba una entrada con input(), pero no recibió ningún dato."],
+  [/OSError:\s*\[Errno 29\]/i,"El ejercicio intentó leer una entrada. En esta versión input() está habilitado mediante una ventana de entrada; vuelve a ejecutar y escribe el dato solicitado."],
+  [/KeyboardInterrupt|Entrada cancelada/i,"La entrada fue cancelada. Ejecuta otra vez y responde las ventanas de input()."]
+ ];
+ const hit=rules.find(([rx])=>rx.test(s));
+ return hit?hit[1]:"Python encontró un error durante la ejecución. Revisa el detalle técnico y la línea indicada.";
+}
+function showPythonError(o,err){
+ const raw=String(err||"");
+ o.innerHTML=`<div class="error-friendly"><strong>💡 ¿Qué significa?</strong><div>${esc(friendlyPythonError(raw))}</div></div><details class="error-details"><summary>Ver detalle técnico</summary><pre>${esc(raw)}</pre></details>`;
+}
+async function runPython(ed,out,btn){
+ let o=document.getElementById(out),b=document.getElementById(btn);b.disabled=true;b.textContent="Cargando…";o.textContent="Preparando Python…";
+ try{
+  let py=await ensurePy();
+  await py.runPythonAsync(`import sys, io, builtins\nfrom js import prompt as _b26_prompt\n_stdout = io.StringIO()\nsys.stdout = _stdout\ndef _b26_input(message=""):\n    value = _b26_prompt(str(message))\n    if value is None:\n        raise KeyboardInterrupt("Entrada cancelada")\n    return str(value)\nbuiltins.input = _b26_input`);
+  try{
+   await py.runPythonAsync(document.getElementById(ed).value);
+   o.textContent=py.runPython("_stdout.getvalue()")||"(Ejecutado sin salida)";
+  }catch(e){showPythonError(o,e)}
+ }catch(e){o.innerHTML=`<div class="error-friendly"><strong>No se pudo cargar Python.</strong><div>Comprueba la conexión e inténtalo nuevamente.</div></div><details class="error-details"><summary>Ver detalle técnico</summary><pre>${esc(String(e))}</pre></details>`}
+ finally{b.disabled=false;b.textContent="▶ Ejecutar Python"}
+}
+window.runPython=runPython;
 function resetEditor(id,txt){document.getElementById(id).value=txt}window.resetEditor=resetEditor;
 
 function githubInfo(){let host=location.hostname.split(".")[0], parts=location.pathname.split("/").filter(Boolean), repo=parts[0];if(location.hostname.endsWith("github.io")&&host&&repo)return {owner:host,repo};return null;}
 function colabUrl(w){let g=githubInfo();if(!g)return null;return `https://colab.research.google.com/github/${g.owner}/${g.repo}/blob/main/laboratorio/notebooks/semana${String(w.week).padStart(2,"0")}.ipynb`;}
 
+
+function pseintSplitArgs(text){
+ const out=[];let cur="",q=null,depth=0;
+ for(let i=0;i<text.length;i++){
+  const ch=text[i];
+  if(q){cur+=ch;if(ch===q&&text[i-1]!=="\\")q=null;continue}
+  if(ch==='"'||ch==="'"){q=ch;cur+=ch;continue}
+  if(ch==='(')depth++; else if(ch===')')depth=Math.max(0,depth-1);
+  if(ch===','&&depth===0){out.push(cur.trim());cur=""}else cur+=ch;
+ }
+ if(cur.trim()||text.trim()==="")out.push(cur.trim());return out;
+}
+function pseintValue(expr,env){
+ let x=String(expr||"").trim();
+ if(/^"[\s\S]*"$/.test(x)||/^'[\s\S]*'$/.test(x))return x.slice(1,-1);
+ x=x.replace(/<>/g,"!=").replace(/(?<![<>!=])=(?!=)/g,"==").replace(/\bY\b/gi,"&&").replace(/\bO\b/gi,"||").replace(/\bNO\b/gi,"!");
+ x=x.replace(/\b[A-Za-z_][A-Za-z0-9_]*\b/g,name=>Object.prototype.hasOwnProperty.call(env,name)?JSON.stringify(env[name]):name);
+ if(!/^[0-9eE+\-*/().<>=!&|\s]+$/.test(x))throw new Error("Expresión no compatible: "+expr);
+ const v=Function('"use strict"; return ('+x+')')();
+ return Number.isFinite(v)?v:v;
+}
+function pseintSnapshot(env){
+ const keys=Object.keys(env);return keys.length?keys.map(k=>`${k} = ${env[k]}`).join(" · "):"-";
+}
+function runPseintTrace(ed,inputId,outId){
+ const code=document.getElementById(ed)?.value||"", rawInputs=document.getElementById(inputId)?.value||"";
+ const inputs=rawInputs.trim()?pseintSplitArgs(rawInputs).map(v=>{let n=Number(v.replace?.(",","."));return Number.isFinite(n)&&v.trim()!==""?n:v.trim()}):[];
+ const env={}, trace=[];let ip=0, step=0, output=[], stack=[];
+ const lines=code.split(/\r?\n/).map((raw,i)=>({raw:raw.trim(),line:i+1})).filter(x=>x.raw);
+ const active=()=>stack.every(s=>s.active);
+ const add=(ln,note="")=>trace.push({step:++step,line:ln.line,instr:ln.raw,vars:pseintSnapshot(env),out:note});
+ try{
+  for(const ln of lines){let s=ln.raw;
+   if(/^(Algoritmo\b|FinAlgoritmo\b|Inicio$|Fin$)/i.test(s)){continue}
+   if(/^Definir\b/i.test(s)){if(active()){let m=s.match(/^Definir\s+(.+?)\s+Como\s+/i);if(m)m[1].split(',').map(x=>x.trim()).filter(Boolean).forEach(k=>{if(!(k in env))env[k]='-'});add(ln)}continue}
+   let m=s.match(/^Si\s+(.+?)\s+Entonces$/i);
+   if(m){const parent=active();let cond=false;if(parent)cond=!!pseintValue(m[1],env);stack.push({parent,cond,active:parent&&cond});if(parent)add(ln,`Condición: ${cond?"Verdadero":"Falso"}`);continue}
+   if(/^SiNo$/i.test(s)){let top=stack[stack.length-1];if(!top)throw new Error(`SiNo sin Si en línea ${ln.line}`);top.active=top.parent&&!top.cond;if(top.parent)add(ln,top.active?"Entra en SiNo":"Omite SiNo");continue}
+   if(/^FinSi$/i.test(s)){if(!stack.length)throw new Error(`FinSi sin Si en línea ${ln.line}`);stack.pop();continue}
+   if(!active())continue;
+   m=s.match(/^Leer\s+([A-Za-z_][A-Za-z0-9_]*)/i);
+   if(m){if(ip>=inputs.length)throw new Error(`Falta un valor para Leer ${m[1]}. Escribe las entradas separadas por comas.`);env[m[1]]=inputs[ip++];add(ln);continue}
+   m=s.match(/^(Escribir|Mostrar)\s+(.+)$/i);
+   if(m){const parts=pseintSplitArgs(m[2]);const txt=parts.map(p=>pseintValue(p,env)).join("");output.push(txt);add(ln,txt);continue}
+   m=s.match(/^([A-Za-z_][A-Za-z0-9_]*)\s*<-\s*(.+)$/);
+   if(m){env[m[1]]=pseintValue(m[2],env);add(ln);continue}
+   add(ln,"Instrucción mostrada sin ejecutar");
+  }
+  const rows=trace.map(r=>`<tr><td>${r.step}</td><td><code>${esc(r.instr)}</code></td><td>${esc(r.vars)}</td><td>${esc(r.out||"")}</td></tr>`).join("");
+  document.getElementById(outId).innerHTML=`<div class="trace-summary"><strong>Salida final:</strong> ${esc(output.join(" | ")||"(sin salida)")}</div><div class="trace-scroll"><table class="trace-table"><thead><tr><th>Paso</th><th>Instrucción ejecutada</th><th>Variables</th><th>Salida / decisión</th></tr></thead><tbody>${rows}</tbody></table></div><p class="muted trace-note">Visualizador educativo para las estructuras PSeInt usadas en las semanas iniciales del B26.</p>`;
+ }catch(e){document.getElementById(outId).innerHTML=`<div class="error-friendly"><strong>💡 No pude completar la visualización.</strong><div>${esc(String(e.message||e))}</div></div>`}
+}
+window.runPseintTrace=runPseintTrace;
+
 function exerciseHTML(wi,ei){let w=W[wi],e=w.exercises[ei],inp=`a${wi}-${ei}`,fb=`f${wi}-${ei}`,sid=`s${wi}-${ei}`,ed=`ed${wi}-${ei}`,out=`o${wi}-${ei}`,run=`r${wi}-${ei}`,starter=e.starter||e.solution;
  let tutorPanel=`tp${wi}-${ei}`,tutorFrame=`tf${wi}-${ei}`,tutorLink=`tl${wi}-${ei}`,tutorBtn=`tb${wi}-${ei}`;
- let lab=w.language==="Python"?`<h4>Laboratorio Python</h4><textarea id="${ed}" class="editor" spellcheck="false">${esc(starter)}</textarea><div class="toolbar"><button id="${run}" class="btn secondary" onclick="runPython('${ed}','${out}','${run}')">▶ Ejecutar Python</button><button id="${tutorBtn}" class="btn tutor" onclick="togglePythonTutor('${ed}','${tutorPanel}','${tutorFrame}','${tutorLink}','${tutorBtn}')">▶ Python Tutor</button><button class="btn" onclick='resetEditor("${ed}",${JSON.stringify(starter)})'>Restaurar</button></div><div id="${out}" class="output">La salida aparecerá aquí.</div><div id="${tutorPanel}" class="tutor-panel hidden"><div class="tutor-head"><strong>Visualización paso a paso · Python Tutor</strong><a id="${tutorLink}" class="btn" target="_blank" rel="noopener">↗ Abrir en pestaña nueva</a></div><p class="muted">Se visualiza el código que está actualmente en el editor. Si lo modificas, oculta y vuelve a abrir Python Tutor para actualizarlo.</p><iframe id="${tutorFrame}" class="tutor-frame" title="Python Tutor: ejecución paso a paso" loading="lazy"></iframe></div>`:"<h4>Práctica en PSeInt</h4><p class='muted'>Analiza la secuencia y contrástala con la solución docente.</p>";
+ let pseInput=`pi${wi}-${ei}`,pseOut=`po${wi}-${ei}`,pseBtn=`pb${wi}-${ei}`;
+ let lab=w.language==="Python"?`<h4>Laboratorio Python</h4><textarea id="${ed}" class="editor" spellcheck="false">${esc(starter)}</textarea><div class="toolbar"><button id="${run}" class="btn secondary" onclick="runPython('${ed}','${out}','${run}')">▶ Ejecutar Python</button><button id="${tutorBtn}" class="btn tutor" onclick="togglePythonTutor('${ed}','${tutorPanel}','${tutorFrame}','${tutorLink}','${tutorBtn}')">▶ Python Tutor</button><button class="btn" onclick='resetEditor("${ed}",${JSON.stringify(starter)})'>Restaurar</button></div><div id="${out}" class="output">La salida aparecerá aquí. Si el programa usa <code>input()</code>, aparecerá una ventana para ingresar cada dato.</div><div id="${tutorPanel}" class="tutor-panel hidden"><div class="tutor-head"><strong>Visualización paso a paso · Python Tutor</strong><a id="${tutorLink}" class="btn" target="_blank" rel="noopener">↗ Abrir en pestaña nueva</a></div><p class="muted">Se visualiza el código que está actualmente en el editor. Si lo modificas, oculta y vuelve a abrir Python Tutor para actualizarlo.</p><iframe id="${tutorFrame}" class="tutor-frame" title="Python Tutor: ejecución paso a paso" loading="lazy"></iframe></div>`:`<h4>Laboratorio PSeInt</h4><textarea id="${ed}" class="editor pseint-editor" spellcheck="false">${esc(e.solution)}</textarea><div class="pseint-input-row"><label for="${pseInput}"><strong>Valores para las instrucciones Leer</strong><span class="muted"> (en orden, separados por comas)</span></label><input id="${pseInput}" placeholder="Ej.: 1200, 40"></div><div class="toolbar"><button id="${pseBtn}" class="btn secondary" onclick="runPseintTrace('${ed}','${pseInput}','${pseOut}')">👣 Visualizar paso a paso</button><button class="btn" onclick='resetEditor("${ed}",${JSON.stringify(e.solution)})'>Restaurar</button></div><div id="${pseOut}" class="pseint-trace"><span class="muted">La visualización mostrará cada instrucción ejecutada, el estado de las variables y la salida.</span></div>`;
  return `<article class="card"><span class="pill">Ejercicio ${ei+1}</span><span class="pill">${esc(w.language)}</span><h3>${esc(e.title)}</h3><p>${esc(e.statement)}</p><h4>Solución razonada</h4><ol>${e.reasoning.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
  <div class="check"><strong>Comprueba tu comprensión</strong><p>${esc(e.check.question)}</p><div class="checkrow"><input id="${inp}" placeholder="Tu respuesta"><button class="btn primary" onclick="checkAnswer(${wi},${ei},'${inp}','${fb}')">Comprobar</button></div><div id="${fb}" class="feedback"></div></div>${lab}
  <div class="toolbar"><button class="btn" onclick="toggle('${sid}')">👁 Mostrar / ocultar solución</button></div><div id="${sid}" class="hidden"><div class="codebox">${esc(e.solution)}</div><p><b>Resultado esperado:</b> ${esc(e.expected)}</p></div></article>`;}

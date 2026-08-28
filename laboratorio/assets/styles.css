@@ -281,3 +281,9 @@ button,input,textarea,select{font:inherit}.topbar{position:sticky;top:0;z-index:
 .tutor-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:6px}
 .tutor-frame{display:block;width:100%;height:620px;border:1px solid #d0d5dd;border-radius:10px;background:#fff}
 @media(max-width:700px){.tutor-frame{height:720px}.tutor-head{align-items:flex-start}}
+
+
+/* v13 · input(), errores amigables y visualizador PSeInt */
+.error-friendly{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff4e5;border:1px solid #f0c36d;border-radius:10px;padding:10px 12px;color:#6b4700;white-space:normal;margin-bottom:8px}
+.error-friendly strong{display:block;margin-bottom:4px}.error-details{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;white-space:normal}.error-details summary{cursor:pointer;font-weight:700}.error-details pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:10px;margin-top:8px}
+.pseint-editor{min-height:190px}.pseint-input-row{margin:10px 0}.pseint-input-row label{display:block;margin-bottom:6px}.pseint-input-row input{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px}.pseint-trace{margin-top:10px;border:1px solid #d8dee8;border-radius:11px;padding:12px;background:#fbfcfe}.trace-summary{padding:8px 10px;background:#eef8f1;border-radius:8px;margin-bottom:10px}.trace-scroll{overflow-x:auto}.trace-table{width:100%;border-collapse:collapse;min-width:680px;font-size:13px}.trace-table th,.trace-table td{border-bottom:1px solid #e5e7eb;padding:8px;text-align:left;vertical-align:top}.trace-table th{background:#f3f4f6;position:sticky;top:0}.trace-table code{white-space:pre-wrap}.trace-note{margin:10px 0 0}
