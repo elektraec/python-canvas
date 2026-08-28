@@ -30,12 +30,12 @@ Si una semana no tiene videos, deja su lista vacía: []
 window.B26_VIDEOS = {
   1: [
     // Ejemplo:
-    // {
-    //   title: "Descomposición de problemas",
-    //   url: "https://www.youtube.com/watch?v=XXXXXXXXXXX",
-    //   duration: "7 min",
-    //   description: "Repaso breve del tema de la semana."
-    // }
+     {
+       title: "Descomposición de problemas",
+       url: "https://youtu.be/IJckkwi9La4?si=YdWy4RiyYxjJNOpp",
+       duration: "5 min",
+       description: "Repaso breve del tema de la semana."
+     }
   ],
 
   2: [],
