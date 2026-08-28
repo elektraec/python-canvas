@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laboratorio Interactivo B26</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="topbar">
+<button id="menuBtn" class="btn mobile-menu">☰</button>
+<h1>Laboratorio Interactivo · Programación y Pensamiento Computacional</h1>
+<span class="brandpill" id="progressText">0/0</span>
+<span class="brandpill xp" id="xpText">0 XP</span>
+</header>
+<div class="layout">
+<aside id="sidebar" class="sidebar">
+<div class="side-title">Navegación</div>
+<button id="examBtn" class="navbtn">📝 Modo examen</button>
+<button id="exportBtn" class="navbtn">⬇️ Exportar progreso</button>
+<div class="side-title">Progreso</div>
+<div class="progress"><span id="progressBar"></span></div>
+<p class="muted" style="font-size:12px">Mejor examen: <b id="bestExam">0%</b></p>
+<div class="side-title">Semanas</div>
+<nav id="weeksNav"></nav>
+</aside>
+<main class="main"><div id="content"></div><div class="footer">B26 · GitHub Pages + Canvas LMS · Pyodide + Colab + actividades interactivas.</div></main>
+</div>
+<script src="assets/data.js"></script><script src="assets/app.js"></script>
+</body></html>
