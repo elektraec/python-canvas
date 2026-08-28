@@ -52,22 +52,38 @@ function resourcesHTML(wi){
 function youtubeId(url){
   if(!url) return "";
   const s=String(url).trim();
-  const patterns=[
-    /youtu\.be\/([A-Za-z0-9_-]{6,})/,
-    /youtube\.com\/watch\?[^#]*v=([A-Za-z0-9_-]{6,})/,
-    /youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/,
-    /youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/
-  ];
-  for(const p of patterns){
-    const m=s.match(p);
-    if(m) return m[1];
+  try{
+    const u=new URL(s);
+    const host=u.hostname.replace(/^www\./,"");
+    if(host==="youtu.be"){
+      return u.pathname.split("/").filter(Boolean)[0]||"";
+    }
+    if(host.endsWith("youtube.com") || host.endsWith("youtube-nocookie.com")){
+      if(u.searchParams.get("v")) return u.searchParams.get("v");
+      const parts=u.pathname.split("/").filter(Boolean);
+      const idx=parts.findIndex(x=>["embed","shorts","live"].includes(x));
+      if(idx>=0 && parts[idx+1]) return parts[idx+1];
+    }
+  }catch(e){}
+  const m=s.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{6,})/);
+  return m?m[1]:"";
+}
+
+let VIDEO_CONFIG={};
+
+async function loadVideoConfig(){
+  try{
+    const res=await fetch(`assets/videos.json?t=${Date.now()}`, {cache:"no-store"});
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    VIDEO_CONFIG=await res.json();
+  }catch(err){
+    console.error("No se pudo cargar assets/videos.json",err);
+    VIDEO_CONFIG={};
   }
-  return "";
 }
 
 function weekVideos(weekNumber){
-  const source=window.B26_VIDEOS||{};
-  const list=source[weekNumber]||source[String(weekNumber)]||[];
+  const list=VIDEO_CONFIG[String(weekNumber)]||VIDEO_CONFIG[weekNumber]||[];
   return Array.isArray(list)?list.slice(0,3):[];
 }
 
@@ -235,4 +251,16 @@ function resetProgress(){
   write({checks:{},xp:0,examBest:0});updateStats();setProgressStatus("Progreso restablecido a cero.","ok");
 }
 window.resetProgress=resetProgress;
-document.addEventListener("DOMContentLoaded",()=>{buildNav();updateStats();$("#menuBtn").onclick=()=>$("#sidebar").classList.toggle("open");$("#examBtn").onclick=examStart;$("#exportBtn").onclick=exportProgress;$("#importBtn").onclick=()=>$("#importFile").click();$("#importFile").onchange=e=>importProgressFile(e.target.files[0]);$("#resetBtn").onclick=resetProgress;let n=+new URLSearchParams(location.search).get("semana")||1;renderWeek(W.some(w=>w.week===n)?n:1);});
+document.addEventListener("DOMContentLoaded",async()=>{
+  await loadVideoConfig();
+  buildNav();
+  updateStats();
+  $("#menuBtn").onclick=()=>$("#sidebar").classList.toggle("open");
+  $("#examBtn").onclick=examStart;
+  $("#exportBtn").onclick=exportProgress;
+  $("#importBtn").onclick=()=>$("#importFile").click();
+  $("#importFile").onchange=e=>importProgressFile(e.target.files[0]);
+  $("#resetBtn").onclick=resetProgress;
+  let n=+new URLSearchParams(location.search).get("semana")||1;
+  renderWeek(W.some(w=>w.week===n)?n:1);
+});
