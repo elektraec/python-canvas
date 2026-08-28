@@ -101,6 +101,50 @@ window.B26_WEEKS = [
         "url": "https://pseint.sourceforge.net/",
         "note": "Úsalo como apoyo para practicar algoritmos, pseudocódigo y diagramas antes de programar en Python."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Definición",
+        "question": "¿Qué es un algoritmo?",
+        "answer": "Secuencia finita y ordenada de pasos para resolver un problema.",
+        "type": "open"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué significa descomponer un problema?",
+        "answer": "Dividir un problema grande en partes más pequeñas y manejables.",
+        "type": "open"
+      },
+      {
+        "category": "Comprensión",
+        "question": "En el modelo entrada–proceso–salida, ¿cómo se llama la información que recibe el algoritmo antes de realizar los cálculos?",
+        "answer": "entrada",
+        "type": "text"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Un tanque vacío tiene capacidad de 600 litros y una bomba introduce agua a un caudal constante de 50 litros por minuto. ¿Cuántos minutos tarda en llenarse?",
+        "answer": 12,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Un sensor registra las temperaturas 20 °C, 22 °C y 24 °C. Si el algoritmo debe calcular el promedio, ¿qué valor debe producir como salida?",
+        "answer": 22,
+        "type": "number"
+      },
+      {
+        "category": "Aplicación",
+        "question": "Para un algoritmo que calcula la potencia eléctrica usando P = V × I, si el voltaje y la corriente son las entradas, ¿cuál es la salida principal?",
+        "answer": "potencia",
+        "type": "text"
+      },
+      {
+        "category": "Pensamiento computacional",
+        "question": "Un problema consiste en controlar el llenado de un tanque. Indica tres partes en las que podrías descomponerlo antes de diseñar el algoritmo.",
+        "answer": "Respuesta abierta: por ejemplo medir nivel, decidir si activar la bomba y detenerla al alcanzar el nivel objetivo.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -206,6 +250,50 @@ window.B26_WEEKS = [
         "url": "https://pseint.sourceforge.net/",
         "note": "Apoyo para variables, entrada/salida, operadores y expresiones en pseudocódigo."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Promedio de tres mediciones Solicitar tres mediciones reales y calcular su promedio. Para 10, 12 y 14, ¿cuál es el promedio?",
+        "answer": 12,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Conversión de temperatura Leer una temperatura en grados Celsius y convertirla a Fahrenheit utilizando F = C × 9/5 + 32. ¿A cuántos °F equivalen 25 °C?",
+        "answer": 77,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Nombre que referencia un valor que puede utilizarse y cambiar durante la ejecución.",
+        "answer": "Variable",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Operación que guarda o actualiza un valor en una variable.",
+        "answer": "Asignación",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Símbolo que realiza operaciones como suma, resta, multiplicación o división.",
+        "answer": "Operador aritmético",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Combinación de valores, variables y operadores que produce un resultado.",
+        "answer": "Expresión",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Variable» en el contexto de esta semana.",
+        "answer": "Nombre que referencia un valor que puede utilizarse y cambiar durante la ejecución.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -308,6 +396,50 @@ window.B26_WEEKS = [
         "title": "PSeInt — sitio oficial",
         "url": "https://pseint.sourceforge.net/",
         "note": "Apoyo para condiciones, decisiones y estructuras Si / SiNo."
+      }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Clasificación por límite Leer una medición y un límite máximo. Si la medición supera el límite, mostrar «ALERTA»; en caso contrario, mostrar «NORMAL». Con medición 82 y límite 80, escribe el resultado.",
+        "answer": "ALERTA",
+        "type": "text"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Clasificación en tres niveles Una variable de desempeño se clasifica como BAJO si es menor que 60, MEDIO si está entre 60 y 79, y ALTO si es 80 o superior. ¿Cómo se clasifica el valor 72?",
+        "answer": "MEDIO",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Expresión que se evalúa como verdadera o falsa y permite tomar decisiones.",
+        "answer": "Condición",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Compara valores, por ejemplo mayor que, menor que o igual.",
+        "answer": "Operador relacional",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Combina o modifica condiciones, por ejemplo AND/Y, OR/O y NOT/NO.",
+        "answer": "Operador lógico",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Estructura que ejecuta diferentes instrucciones según una condición.",
+        "answer": "Condicional",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Condición» en el contexto de esta semana.",
+        "answer": "Expresión que se evalúa como verdadera o falsa y permite tomar decisiones.",
+        "type": "open"
       }
     ]
   },
@@ -416,6 +548,50 @@ window.B26_WEEKS = [
         "url": "https://docs.python.org/es/3/tutorial/controlflow.html",
         "note": "Revisa if, elif, else e indentación."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Traducir el control de límite Traducir a Python el algoritmo de la semana anterior que compara una medición con un límite. Si medicion=82 y limite=80, ¿qué imprime?",
+        "answer": "ALERTA",
+        "type": "text"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Costo total con validación básica Leer cantidad y precio unitario. Calcular el total. Si el total es mayor o igual a 100, mostrar además «Compra de alto valor». ¿Cuál es el total para 10 unidades a 12.5?",
+        "answer": 125,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Lenguaje de programación de propósito general con sintaxis legible y amplia biblioteca estándar.",
+        "answer": "Python",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Función que recibe texto introducido por el usuario.",
+        "answer": "input()",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Transformación explícita de un dato, por ejemplo de texto a int o float.",
+        "answer": "Conversión de tipo",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Espacios al inicio de una línea que en Python delimitan bloques de código.",
+        "answer": "Indentación",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Python» en el contexto de esta semana.",
+        "answer": "Lenguaje de programación de propósito general con sintaxis legible y amplia biblioteca estándar.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -516,6 +692,50 @@ window.B26_WEEKS = [
         "title": "Python — Tutorial oficial en español: while y control de flujo",
         "url": "https://docs.python.org/es/3/tutorial/introduction.html#first-steps-towards-programming",
         "note": "Ejemplos introductorios de repetición con while."
+      }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Validar una entrada Solicitar una calificación entre 0 y 10. Mientras el usuario ingrese un valor fuera del rango, volver a solicitarlo. ¿8.5 es una nota válida? Responde SI o NO.",
+        "answer": "SI",
+        "type": "text"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Acumular hasta alcanzar una meta Registrar valores positivos hasta que la suma acumulada alcance o supere 100. Mostrar cuántos valores fueron necesarios y la suma final. Con 30, 25, 20 y 35, ¿cuál es la suma final?",
+        "answer": 110,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Ciclo que repite un bloque mientras una condición sea verdadera.",
+        "answer": "while",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Variable que registra cuántas veces ocurre un evento.",
+        "answer": "Contador",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Variable que combina progresivamente valores, normalmente mediante una suma.",
+        "answer": "Acumulador",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Repetición que no termina porque la condición de salida nunca se cumple.",
+        "answer": "Ciclo infinito",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «while» en el contexto de esta semana.",
+        "answer": "Ciclo que repite un bloque mientras una condición sea verdadera.",
+        "type": "open"
       }
     ]
   },
@@ -620,6 +840,50 @@ window.B26_WEEKS = [
         "url": "https://docs.python.org/es/3/tutorial/controlflow.html#for-statements",
         "note": "Ejemplos directos de for, range() y recorridos."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Promedio de cinco mediciones Solicitar cinco mediciones utilizando for, acumularlas y calcular el promedio. Para 10, 12, 8, 15 y 5, ¿cuál es el promedio?",
+        "answer": 10,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Máximo y mínimo sin listas Leer cinco valores y determinar el mayor y el menor sin utilizar listas. Para 7, 3, 10, 6 y 4, ¿cuál es el máximo?",
+        "answer": 10,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Ciclo utilizado para recorrer una secuencia o repetir un conjunto conocido de iteraciones.",
+        "answer": "for",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Función que genera una secuencia de enteros útil en ciclos for.",
+        "answer": "range()",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Una ejecución individual del cuerpo de un ciclo.",
+        "answer": "Iteración",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Valores extremos de un conjunto de datos.",
+        "answer": "Máximo y mínimo",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «for» en el contexto de esta semana.",
+        "answer": "Ciclo utilizado para recorrer una secuencia o repetir un conjunto conocido de iteraciones.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -723,6 +987,50 @@ window.B26_WEEKS = [
         "title": "Python — Tutorial oficial en español: definición de funciones",
         "url": "https://docs.python.org/es/3/tutorial/controlflow.html#defining-functions",
         "note": "Explica def, parámetros, argumentos y return."
+      }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Función para calcular promedio Crear una función que reciba tres valores y retorne su promedio. Luego usarla desde el programa principal. ¿Qué retorna promedio(6,8,10)?",
+        "answer": 8,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Programa modular de validación y cálculo Crear una función es_valido(valor, minimo, maximo) que retorne True o False y otra función calcular_potencia(v, i). ¿Cuál es la potencia para 120 V y 2 A?",
+        "answer": 240,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Bloque reutilizable de código que realiza una tarea específica.",
+        "answer": "Función",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Nombre definido en una función para recibir un dato.",
+        "answer": "Parámetro",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Valor concreto enviado a una función al invocarla.",
+        "answer": "Argumento",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Instrucción que finaliza una función y devuelve un valor.",
+        "answer": "return",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Función» en el contexto de esta semana.",
+        "answer": "Bloque reutilizable de código que realiza una tarea específica.",
+        "type": "open"
       }
     ]
   },
@@ -839,6 +1147,50 @@ window.B26_WEEKS = [
         "url": "https://docs.python.org/es/3/tutorial/",
         "note": "Referencia general para repasar programación estructurada."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Monitoreo de diez mediciones Registrar 10 mediciones. Calcular promedio, contar cuántas superan un límite y mostrar el mayor valor. Resolver con funciones, for y condicionales, todavía sin listas. Con los datos de ejemplo y límite 50, ¿cuántas alertas hay?",
+        "answer": 5,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Trazado y corrección Analizar el siguiente código, identificar el error y corregirlo: contador debe aumentar hasta 5, pero el programa no termina. ¿Qué instrucción faltaba? Escribe: contador += 1",
+        "answer": "CONTADOR += 1",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Organización de programas mediante secuencias, decisiones, ciclos y funciones.",
+        "answer": "Programación estructurada",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Seguimiento paso a paso de variables e instrucciones para comprender la ejecución.",
+        "answer": "Trazado",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Conjunto de entradas y resultado esperado usado para comprobar un programa.",
+        "answer": "Caso de prueba",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Proceso sistemático de localizar, comprender y corregir errores.",
+        "answer": "Depuración",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Programación estructurada» en el contexto de esta semana.",
+        "answer": "Organización de programas mediante secuencias, decisiones, ciclos y funciones.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -944,6 +1296,50 @@ window.B26_WEEKS = [
         "url": "https://docs.python.org/es/3/tutorial/datastructures.html",
         "note": "Amplía operaciones y recorridos con listas."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Procesar una lista de mediciones Dada la lista [12.5, 10.8, 15.2, 9.7, 13.1], calcular promedio, máximo y mínimo. ¿Cuál es el máximo de la lista?",
+        "answer": 15.2,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Construir una lista y contar alertas Solicitar 5 datos, almacenarlos en una lista y contar cuántos son mayores que 50. ¿Cuántos valores son mayores que 50?",
+        "answer": 3,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Colección ordenada y mutable de elementos en Python.",
+        "answer": "Lista",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Posición de un elemento dentro de una secuencia; en Python suele comenzar en 0.",
+        "answer": "Índice",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Método que agrega un elemento al final de una lista.",
+        "answer": "append()",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Proceso de visitar los elementos de una colección uno por uno.",
+        "answer": "Recorrido",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Lista» en el contexto de esta semana.",
+        "answer": "Colección ordenada y mutable de elementos en Python.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -1047,6 +1443,50 @@ window.B26_WEEKS = [
         "url": "https://docs.python.org/es/3/tutorial/datastructures.html",
         "note": "Consulta listas, tuplas, conjuntos y diccionarios para comparar estructuras."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Matriz de mediciones Representar mediciones de 3 equipos durante 4 periodos y calcular el promedio de cada equipo. ¿Cuál es el promedio del Equipo 2?",
+        "answer": 20.25,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Registro con diccionario Representar un equipo con código, nombre, estado y valor actual usando un diccionario. ¿Cuál es el estado del equipo?",
+        "answer": "ACTIVO",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Lista cuyos elementos pueden ser otras listas; puede representar tablas o matrices sencillas.",
+        "answer": "Lista anidada",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Secuencia ordenada e inmutable.",
+        "answer": "Tupla",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Colección de pares clave–valor.",
+        "answer": "Diccionario",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Forma de organizar datos para almacenarlos y procesarlos.",
+        "answer": "Estructura de datos",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Lista anidada» en el contexto de esta semana.",
+        "answer": "Lista cuyos elementos pueden ser otras listas; puede representar tablas o matrices sencillas.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -1144,6 +1584,50 @@ window.B26_WEEKS = [
         "title": "Python — Tutorial oficial en español: cadenas",
         "url": "https://docs.python.org/es/3/tutorial/introduction.html#text",
         "note": "Ejemplos claros de texto, índices, cortes y operaciones con cadenas."
+      }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Normalizar un código Leer un código ingresado por el usuario, eliminar espacios externos y convertirlo a mayúsculas. ¿Cuál es el código normalizado de « eq-15 »?",
+        "answer": "EQ-15",
+        "type": "text"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Buscar registros por prefijo Dada una lista de códigos, mostrar únicamente los que empiezan por «TEMP». ¿Cuántos códigos empiezan por TEMP?",
+        "answer": 2,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Secuencia de caracteres utilizada para representar texto.",
+        "answer": "Cadena (str)",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Método que elimina espacios de los extremos de una cadena.",
+        "answer": "strip()",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Método que devuelve una versión en mayúsculas de una cadena.",
+        "answer": "upper()",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Método que comprueba si una cadena comienza con un prefijo.",
+        "answer": "startswith()",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Cadena (str)» en el contexto de esta semana.",
+        "answer": "Secuencia de caracteres utilizada para representar texto.",
+        "type": "open"
       }
     ]
   },
@@ -1253,6 +1737,50 @@ window.B26_WEEKS = [
         "url": "https://docs.python.org/es/3/library/csv.html",
         "note": "Referencia para csv.reader y csv.DictReader."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Leer un archivo de texto Suponer que datos.txt contiene una medición por línea. Leer todas las líneas, convertirlas a float y calcular el promedio. Si datos.txt contiene 10, 12 y 14, ¿cuál es el promedio?",
+        "answer": 12,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Procesar un CSV sencillo Archivo mediciones.csv: codigo,valor. Mostrar el código y el valor de cada fila y calcular el promedio de valores. Con valores 10, 12 y 14, ¿cuál es el promedio?",
+        "answer": 12,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Recurso persistente que almacena datos fuera de la ejecución inmediata del programa.",
+        "answer": "Archivo",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Formato de texto tabular en el que cada fila contiene campos separados por un delimitador.",
+        "answer": "CSV",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Patrón de Python para abrir un archivo y asegurar su cierre al finalizar el bloque.",
+        "answer": "with open(...)",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Herramienta de la biblioteca estándar que interpreta cada fila CSV como un diccionario.",
+        "answer": "csv.DictReader",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Archivo» en el contexto de esta semana.",
+        "answer": "Recurso persistente que almacena datos fuera de la ejecución inmediata del programa.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -1358,6 +1886,50 @@ window.B26_WEEKS = [
         "url": "https://docs.python.org/es/3/tutorial/datastructures.html",
         "note": "Repasa recorridos, ordenamiento y operaciones sobre listas."
       }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Búsqueda lineal Buscar el valor 22 dentro de la lista [15, 18, 22, 13, 27] e indicar su posición. ¿En qué índice está el valor 22?",
+        "answer": 2,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Ordenar sin modificar el original Dada una lista de mediciones, crear una nueva lista ordenada de menor a mayor sin alterar la original. ¿Cuál es el primer valor de la lista ordenada?",
+        "answer": 18,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Estrategia que revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección.",
+        "answer": "Búsqueda lineal",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Proceso de reorganizar elementos según un criterio.",
+        "answer": "Ordenamiento",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Función que devuelve una nueva lista ordenada sin modificar la original.",
+        "answer": "sorted()",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Comparación de cuánto trabajo requiere un procedimiento al aumentar la cantidad de datos.",
+        "answer": "Complejidad intuitiva",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Búsqueda lineal» en el contexto de esta semana.",
+        "answer": "Estrategia que revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección.",
+        "type": "open"
+      }
     ]
   },
   {
@@ -1459,6 +2031,50 @@ window.B26_WEEKS = [
         "title": "Python — Tutorial oficial en español: errores y excepciones",
         "url": "https://docs.python.org/es/3/tutorial/errors.html",
         "note": "Explica errores sintácticos, excepciones y try/except."
+      }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Detectar tres tipos de error Analizar tres fragmentos y clasificar cada error: sintáctico, de ejecución o lógico. Dividir 10/0 produce un error de... (EJECUCION, SINTACTICO o LOGICO)",
+        "answer": "EJECUCION",
+        "type": "text"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Validar entrada con try/except Solicitar un número real. Si el usuario ingresa texto no numérico, mostrar un mensaje y no detener abruptamente el programa. ¿Qué excepción captura float('abc')?",
+        "answer": "VALUEERROR",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Problema que impide interpretar el código porque no respeta la gramática del lenguaje.",
+        "answer": "Error sintáctico",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Evento detectado durante la ejecución que interrumpe el flujo normal si no se maneja.",
+        "answer": "Excepción",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? El programa se ejecuta, pero produce un resultado incorrecto por un problema en la lógica.",
+        "answer": "Error lógico",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Estructura de Python para manejar excepciones de manera controlada.",
+        "answer": "try/except",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Error sintáctico» en el contexto de esta semana.",
+        "answer": "Problema que impide interpretar el código porque no respeta la gramática del lenguaje.",
+        "type": "open"
       }
     ]
   },
@@ -1565,6 +2181,50 @@ window.B26_WEEKS = [
         "title": "Matplotlib — Pyplot tutorial",
         "url": "https://matplotlib.org/stable/tutorials/pyplot.html",
         "note": "Guía introductoria para crear y rotular gráficas sencillas."
+      }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Estadísticos descriptivos Calcular media, mediana y desviación estándar de una lista de mediciones utilizando statistics. ¿Cuál es la mediana?",
+        "answer": 11,
+        "type": "number"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Gráfica de una serie temporal Representar seis mediciones tomadas en momentos consecutivos. ¿Cuál es el valor máximo de la serie?",
+        "answer": 27,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Promedio aritmético de un conjunto de valores.",
+        "answer": "Media",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Valor central de los datos una vez ordenados.",
+        "answer": "Mediana",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Medida de dispersión que indica cuánto tienden a alejarse los datos de su media.",
+        "answer": "Desviación estándar",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Representación gráfica que facilita identificar patrones, tendencias y valores atípicos.",
+        "answer": "Visualización de datos",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Media» en el contexto de esta semana.",
+        "answer": "Promedio aritmético de un conjunto de valores.",
+        "type": "open"
       }
     ]
   },
@@ -1681,6 +2341,50 @@ window.B26_WEEKS = [
         "title": "Python — Biblioteca estándar: csv",
         "url": "https://docs.python.org/es/3/library/csv.html",
         "note": "Apoyo para el procesamiento de archivos CSV del proyecto integrador."
+      }
+    ],
+    "exam_bank": [
+      {
+        "category": "Ejercicio",
+        "question": "Mini sistema de procesamiento de mediciones A partir de un archivo CSV con codigo,valor, leer los registros, calcular promedio, máximo y mínimo, contar valores que superan un límite y mostrar el código asociado al máximo. Con los datos de ejemplo, ¿qué código tiene el máximo?",
+        "answer": "S2",
+        "type": "text"
+      },
+      {
+        "category": "Ejercicio",
+        "question": "Plan mínimo de pruebas Diseñar casos de prueba para el programa anterior antes de entregarlo. ¿Cuántos casos mínimos de prueba se proponen?",
+        "answer": 5,
+        "type": "number"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Combinación de varias técnicas de programación para resolver un problema completo.",
+        "answer": "Integración",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Conjunto de campos relacionados que describen una entidad o medición.",
+        "answer": "Registro",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Comprobación de que los datos cumplen condiciones antes de procesarlos.",
+        "answer": "Validación",
+        "type": "text"
+      },
+      {
+        "category": "Definición",
+        "question": "¿Qué concepto corresponde a la siguiente definición? Caso de prueba construido alrededor de valores exactamente en un umbral o muy cerca de él.",
+        "answer": "Prueba de límite",
+        "type": "text"
+      },
+      {
+        "category": "Comprensión",
+        "question": "Explica con tus palabras qué significa «Integración» en el contexto de esta semana.",
+        "answer": "Combinación de varias técnicas de programación para resolver un problema completo.",
+        "type": "open"
       }
     ]
   }
