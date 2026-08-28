@@ -62,15 +62,13 @@ function examStart(){
   const options=W.map(w=>`<option value="${w.week}">Semana ${w.week} — ${esc(w.title)}</option>`).join("");
   $("#content").innerHTML=`
     <section class="hero"><h2>📝 Modo examen</h2>
-    <p>Selecciona una semana. Cada intento incluye al menos 5 preguntas con contexto, combinando definiciones, comprensión y ejercicios.</p></section>
-    <div class="card">
-      <h3>Configurar examen</h3>
+    <p>Selecciona una semana. Las preguntas son de selección múltiple y cada intento contiene al menos 5.</p></section>
+    <div class="card"><h3>Configurar examen</h3>
       <label for="examWeek"><b>Semana</b></label>
       <select id="examWeek" style="width:100%;margin:8px 0 14px;padding:10px;border:1px solid var(--line);border-radius:9px">${options}</select>
       <label for="examCount"><b>Número de preguntas</b></label>
       <select id="examCount" style="width:100%;margin:8px 0 14px;padding:10px;border:1px solid var(--line);border-radius:9px">
-        <option value="5" selected>5 preguntas</option>
-        <option value="7">7 preguntas</option>
+        <option value="5" selected>5 preguntas</option><option value="7">7 preguntas</option>
       </select>
       <button class="btn primary" onclick="examGenerate()">Generar examen</button>
     </div>`;
@@ -82,49 +80,38 @@ function examGenerate(){
   const requested=Math.max(5,Number(document.getElementById("examCount").value)||5);
   const w=W.find(x=>x.week===weekNum);
   let pool=shuffled(w.exam_bank||[]).slice(0,Math.min(requested,(w.exam_bank||[]).length));
+  // Shuffle choices independently on every attempt so the correct letter is not predictable.
+  pool=pool.map(q=>{
+    let tagged=q.options.map((text,i)=>({text,ok:i===q.correct}));
+    tagged=shuffled(tagged);
+    return {...q,options:tagged.map(x=>x.text),correct:tagged.findIndex(x=>x.ok)};
+  });
   sessionStorage.setItem("b26exam",JSON.stringify({week:weekNum,items:pool}));
   $("#content").innerHTML=`
     <section class="hero"><h2>📝 Examen · Semana ${w.week}</h2><p>${esc(w.title)} · ${pool.length} preguntas</p></section>
     <div id="examQuestions">${pool.map((q,i)=>`
-      <div class="exam-q"><span class="badge">${esc(q.category||"Pregunta")}</span>
-      <p><b>${i+1}.</b> ${esc(q.question)}</p>
-      ${q.type==="open"
-        ? `<textarea id="exam${i}" rows="4" placeholder="Escribe tu respuesta"></textarea>`
-        : `<input id="exam${i}" placeholder="Respuesta" autocomplete="off">`}
-      </div>`).join("")}</div>
-    <div class="toolbar"><button class="btn primary" onclick="examSubmit()">Enviar examen</button>
-    <button class="btn" onclick="examStart()">Cambiar semana</button></div>
+      <fieldset class="exam-q"><legend><span class="badge">${esc(q.category||"Pregunta")}</span> <b>${i+1}.</b> ${esc(q.question)}</legend>
+      <div class="mcq-options">${q.options.map((op,j)=>`
+        <label class="mcq-option"><input type="radio" name="exam${i}" value="${j}"> <code>${esc(op)}</code></label>`).join("")}</div>
+      </fieldset>`).join("")}</div>
+    <div class="toolbar"><button class="btn primary" onclick="examSubmit()">Enviar examen</button><button class="btn" onclick="examStart()">Cambiar semana</button></div>
     <div id="examResult" class="card" style="margin-top:14px"></div>`;
 }
 window.examGenerate=examGenerate;
 
 function examSubmit(){
-  const saved=JSON.parse(sessionStorage.getItem("b26exam")||'{"items":[]}');
-  const items=saved.items||[];
-  let autoScore=0,autoCount=0,details=[];
+  const saved=JSON.parse(sessionStorage.getItem("b26exam")||'{"items":[]}'),items=saved.items||[];
+  let score=0,details=[];
   items.forEach((q,i)=>{
-    const v=document.getElementById("exam"+i).value;
-    if(q.type==="open"){
-      details.push(`<li><b>Respuesta abierta.</b> Compara tu respuesta con esta orientación:<br>${esc(q.answer)}</li>`);
-      return;
-    }
-    autoCount++;
-    const ok=q.type==="number"
-      ? Number.isFinite(Number(String(v).replace(",","."))) && Math.abs(Number(String(v).replace(",","."))-Number(q.answer))<1e-6
-      : norm(v)===norm(q.answer);
-    if(ok)autoScore++;
-    details.push(`<li>${ok?"✓":"✗"} ${esc(q.question)}<br><b>Respuesta esperada:</b> ${esc(q.answer)}</li>`);
+    const picked=document.querySelector(`input[name="exam${i}"]:checked`);
+    const selected=picked?Number(picked.value):-1,ok=selected===q.correct;
+    if(ok)score++;
+    details.push(`<li>${ok?"✓":"✗"} ${esc(q.question)}<br><b>Respuesta correcta:</b> <code>${esc(q.options[q.correct])}</code></li>`);
   });
-  const pct=autoCount?Math.round(autoScore/autoCount*100):0;
-  let s=store();
-  if(autoCount && pct>s.examBest)s.examBest=pct;
-  write(s);updateStats();
-  $("#examResult").innerHTML=`
-    <h3>Resultado automático: ${autoScore}/${autoCount} (${pct}%)</h3>
-    ${items.length-autoCount?`<p class="muted">${items.length-autoCount} pregunta(s) abierta(s) se revisan mediante comparación con una respuesta orientativa y no cuentan en el porcentaje automático.</p>`:""}
-    <ol>${details.join("")}</ol>
-    <div class="toolbar"><button class="btn primary" onclick="examGenerate()">Nuevo examen de esta semana</button>
-    <button class="btn" onclick="examStart()">Elegir otra semana</button></div>`;
+  const pct=items.length?Math.round(score/items.length*100):0;
+  let s=store();if(pct>s.examBest)s.examBest=pct;write(s);updateStats();
+  $("#examResult").innerHTML=`<h3>Resultado: ${score}/${items.length} (${pct}%)</h3><ol>${details.join("")}</ol>
+    <div class="toolbar"><button class="btn primary" onclick="examGenerate()">Nuevo examen de esta semana</button><button class="btn" onclick="examStart()">Elegir otra semana</button></div>`;
 }
 window.examSubmit=examSubmit;
 

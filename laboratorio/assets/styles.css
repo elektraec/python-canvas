@@ -42,3 +42,6 @@ button,input,textarea,select{font:inherit}.topbar{position:sticky;top:0;z-index:
 .ref-list{padding-left:20px}.ref-list li{margin:12px 0;line-height:1.45}.ref-list a{color:var(--brand);font-weight:700}
 .file-input{display:none}.statusmsg{font-size:12px;margin-top:8px;min-height:18px}
 @media(max-width:900px){.concept-grid{grid-template-columns:1fr}}
+
+.mcq-options{display:grid;gap:9px;margin-top:12px}.mcq-option{display:flex;align-items:flex-start;gap:8px;padding:10px;border:1px solid var(--line);border-radius:9px;cursor:pointer}.mcq-option:hover{background:#f7f9fb}.mcq-option code{white-space:pre-wrap;word-break:break-word;background:transparent}
+fieldset.exam-q{min-width:0}
